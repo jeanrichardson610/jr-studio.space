@@ -36,9 +36,10 @@ A modern, interactive portfolio website built with React that mimics the macOS d
 ## 👤 Author
 
 **Jean Richardson**
-- GitHub: [@Jean Richardson](https://github.com/jeanrichardson610)
-- LinkedIn: [Jean Richardson](https://linkedin.com/in/jean-marsalais-richardson)
-- Portfolio: [JR Studio](https://www.jr-studio.space/)
+<strong>Jean Richardson</strong> - 
+GitHub: <a href="https://github.com/jeanrichardson610" target="_blank">Jean Richardson</a> - 
+LinkedIn: <a href="https://linkedin.com/in/jean-marsalais-richardson" target="_blank">Jean Richardson</a> - 
+Portfolio: <a href="https://www.jr-studio.space/" target="_blank">JR Studio</a>
 
 ## 🙏 Acknowledgments
 
