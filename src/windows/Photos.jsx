@@ -7,7 +7,7 @@ const Photos = () => {
 
   const { openWindow, focusWindow } = useWindowStore();
 
-  const email = 'swastik15.sharma.work@gmail.com';
+  const email = 'jean.richardson610@gmail.com';
 
   return (
     <div className="flex flex-col h-full">
