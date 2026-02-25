@@ -154,7 +154,7 @@ const Welcome = React.memo(() => {
         <div className="small-screen">
           <p className="text-white">Mobile version is still in progress. For the full experience, use a larger screen or visit the desktop site. </p>
           <br />
-          <a href="https://jeanrichardson610.github.io/jr-studio.space/" target="_blank" rel="noopener noreferrer" className="flex-center text-blue-100">For Mobile Devices visit here</a>
+          <a href="https://github.com/jeanrichardson610/jr-studio.space" target="_blank" rel="noopener noreferrer" className="flex-center text-blue-100">For Mobile Devices visit here</a>
         </div>
       </section>
       
