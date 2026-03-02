@@ -17,10 +17,11 @@ const navLinks = [
 ];
 
 const navIcons = [
-  /* {
+  {
     id: 1,
     img: "/icons/wifi.svg",
-  }, */
+    type: "wifi"
+  }, 
   {
     id: 2,
     img: "/icons/search.svg",
@@ -37,10 +38,11 @@ const navIcons = [
     type: "finder",
     action: "about",
   },
-  /* {
+    {
     id: 5,
-    img: "/icons/mode.svg",
-  }, */
+    img: "/icons/moon.svg",
+    type: "themeToggle"
+  }, 
 
 ];
 

@@ -26,13 +26,13 @@ const ImageFile = () => {
         <h2 className="flex items-center justify-center font-bold">{name}</h2>
         <button
           onClick={setAsWallpaper}
-          className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200"
+          className="px-2 py-1 text-xs rounded bg-blue-100 text-blue-700 hover:bg-blue-200  transition-colors duration-300 ease-in-out"
           title="Set as Wallpaper"
         >
           Set as Wallpaper
         </button>
       </div>
-      <div className='flex-1 overflow-auto bg-white p-5 flex items-center justify-center'>
+      <div className='flex-1 overflow-auto bg-white preview p-5 flex items-center justify-center'>
         {imageUrl ? (
           <img
             src={imageUrl}

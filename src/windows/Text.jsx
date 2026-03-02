@@ -23,7 +23,7 @@ const Text = () => {
         </h2>
       </div>
 
-      <div className="flex-1 min-h-0 overflow-y-auto p-5 space-y-6 bg-white">
+      <div className="flex-1 min-h-0 overflow-y-auto p-5 space-y-6 bg-white preview max-sm:max-h-[400px]">
         {image ? (
   <div className="w-full">
     <img

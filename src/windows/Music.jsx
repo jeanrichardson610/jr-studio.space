@@ -81,7 +81,7 @@ const Music = () => {
               <li
                 key={song.id}
                 onClick={() => selectSong(idx)}
-                className={idx === currentIndex ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-200'}
+                className={idx === currentIndex ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-400'}
                 title={song.title}
               >
                 <img src={song.cover} alt="cover" className='w-5 h-5 object-cover rounded' loading='lazy' />
@@ -94,7 +94,7 @@ const Music = () => {
           <div className='cover'>
             <img src={current?.cover || '/images/music.png'} alt={current?.title || 'Cover'} loading='lazy' />
           </div>
-          <div className='mt-6 text-center'>
+          <div className='mt-2 text-center'>
             <h3 className='text-3xl font-bold'>{current?.title || 'Unknown'}</h3>
             <p className='text-sm text-gray-500 mt-1'>{current?.author || 'Unknown'}</p>
           </div>
@@ -131,7 +131,7 @@ const Music = () => {
             </button>
           </div>
           <div className='sliders mt-4 flex-center mr-2 scale-75'>
-            <button aria-label='Mute' onClick={toggleMute} className='p-2 rounded bg-gray-100 hover:bg-gray-200'>
+            <button aria-label='Mute' onClick={toggleMute} className='p-2 rounded  hover:bg-gray-200'>
               {muted || volume === 0 ? <VolumeX size={18} className='text-gray-600' /> : <Volume2 size={18} className='text-gray-600' />}
             </button>
             <input

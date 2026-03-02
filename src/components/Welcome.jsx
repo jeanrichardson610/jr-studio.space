@@ -151,11 +151,7 @@ const Welcome = React.memo(() => {
             "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide" 
           )}
         </h1>
-        <div className="small-screen">
-          <p className="text-white">Mobile version is still in progress. For the full experience, use a larger screen or visit the desktop site. </p>
-          <br />
-          <a href="https://github.com/jeanrichardson610/jr-studio.space" target="_blank" rel="noopener noreferrer" className="flex-center text-blue-100">For Mobile Devices visit here</a>
-        </div>
+       
       </section>
       
       {/* Placeholder for welcome text */}

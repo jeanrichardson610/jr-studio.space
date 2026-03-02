@@ -32,6 +32,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+  document.documentElement.classList.add("dark-mode");
+}, []);
+
+  useEffect(() => {
     const start = () => {
       setEagerMount(true);
       // warm the import cache so subsequent mounts don't suspend
