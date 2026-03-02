@@ -35,7 +35,7 @@ A modern, interactive portfolio website built with React that mimics the macOS d
 
 ## UPGRADES TO ORIGINAL PROJECT
 
-- 1️⃣ Responsive Architecture
+1️⃣ Responsive Architecture
   
 ✅ Problem
 
@@ -49,7 +49,7 @@ Hid nav links (Projects, Resume, Contact) under 640px.
 
 Showed only essential system icons (Moon, WiFi, Music) on mobile.
 
-Prevented entire <ul> from disappearing due to max-sm:hidden misplacement.
+Prevented entire lists from disappearing due to max-sm:hidden misplacement.
 
 Moved responsive logic from CSS into JSX where appropriate for better control.
 
@@ -110,15 +110,7 @@ Windows become mobile-friendly:
 
 Resolved media query conflicts by fully resetting:
 
-position
-
-top
-
-left
-
-transform
-
-margin
+position, top, left, transform, margin
 
 Key Lesson:
 
