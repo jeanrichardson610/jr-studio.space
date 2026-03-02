@@ -350,15 +350,6 @@ body {
         @apply scale-92;
       }
 
-      /* Resize code icon */
-      img[src*="code.png"] {
-        @apply scale-105;
-      }
-
-      /* Resize NER icon - increase by 1px equivalent */
-      img[src*="game.png"] {
-        @apply scale-105;
-      }
     }
   }
 
@@ -702,65 +693,19 @@ body {
     }
     }
 
-
-  #game {
-    @apply w-[1150px] h-[650px] absolute top-10 left-50 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden flex flex-col;
-
-    #window-header {
-      @apply flex items-center justify-between bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
-
-      h2 {
-        @apply flex-1 text-center font-bold text-sm;
-      }
-
-      a {
-        @apply flex items-center;
-      }
-    }
-
-    .sidebar {
-      @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3 flex-shrink-0;
-
-      h3 {
-        @apply text-xs font-medium text-gray-400 mb-2;
-      }
-
-      ul {
-        @apply space-y-1;
-
-        .active {
-          @apply bg-blue-100 text-blue-700;
-        }
-
-        .not-active {
-          @apply text-gray-700 hover:bg-gray-200;
-        }
-
-        li {
-          @apply flex items-center justify-between px-3 py-2 rounded-md cursor-pointer transition-colors text-sm;
-        }
-      }
-    }
-
-    .content {
-      @apply flex-1 p-6 bg-white overflow-y-auto;
-
-      li {
-        @apply flex items-center flex-col gap-4 cursor-pointer;
-
-        img {
-          @apply object-cover object-center w-full h-40 relative group-hover:scale-105;
-        }
-
-        p {
-          @apply text-sm text-center font-medium;
-        }
-      }
-    }
-  }
 }
 
 /* MOBILE VIEW SECTION */
+
+@media (max-width: 1200px) {
+  .window-root {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+}
 
 @media (max-width: 1024px) {
   #home ul {
@@ -771,8 +716,12 @@ body {
 @media (max-width: 768px) {
   .window-root {
     position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important; /* reset translate */
     width: 100% !important;
-    height: auto;
+    height: auto !important;
+    margin: 0 !important;
   }
 
   .navbar time {
