@@ -358,6 +358,7 @@ body {
 
     .close {
       @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+      pointer-events: auto; /* in case parent has pointer-events:none */
     }
 
     .minimize {
@@ -711,6 +712,10 @@ body {
   #home ul {
     display: none;
   }
+
+  .gallery {
+    
+  }
 }
 
 @media (max-width: 768px) {
@@ -722,6 +727,12 @@ body {
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;
+  }
+
+   #photos .gallery {
+    max-height: 60vh; /* or any height that fits mobile screens */
+    overflow-y: auto; /* allow vertical scrolling */
+    padding: 1rem; /* optional: add padding for spacing */
   }
 
   .navbar time {
