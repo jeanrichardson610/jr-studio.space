@@ -240,6 +240,26 @@ Improved class naming consistency
 
 Scoped dark-mode selectors more carefully
 
+🧠 Technical Growth Achieved
+
+This project demonstrates:
+
+Responsive architecture strategy
+
+Breakpoint layering logic
+
+Cross-device event handling
+
+Debugging Android browser behavior
+
+Advanced CSS overrides
+
+GSAP animation coordination
+
+Theming using CSS variables
+
+UI system thinking instead of patching
+
 
 ## 👤 Author
 
