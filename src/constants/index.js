@@ -436,8 +436,8 @@ const WORK_LOCATION = {
           fileType: "txt",
           position: "top-25 left-30",
           description: [
-            "AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic rendering, serverless workers, high-performance KV storage, and a global community feed.",
-            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations and Side-by-Side Comparison - an interactive to show the direct transformation a source image to its AI-rendered counterpart."
+            "AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic AI-rendering, serverless workers, high-performance KV storage, and a global community feed.",
+            "Dynamic Project Gallery: AA personalized workspace that tracks your history of visualizations with instant loading and metadata persistence."
           ],
         },
         {
