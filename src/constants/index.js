@@ -334,7 +334,7 @@ const WORK_LOCATION = {
           description: [
             "A responsive weather application designed to deliver clear, multi-layered forecasts (current, hourly, daily) with a visually immersive UI that adapts to real-time weather conditions.",
             "Most weather apps overwhelm users with cluttered data or lack meaningful visualization and responsiveness.",
-            "The solution: a modern, responsive weather dashboard built with React, Tailwind CSS, and Shadcn UI, leveraging TanStack Query for efficient data fetching and state management. Explore current, hourly, and daily weather data for any location, visualize live weather maps, and switch seamlessly between light and dark modes. ",
+            "The solution: a modern, responsive weather dashboard built with React, Tailwind CSS, and Shadcn UI, leveraging TanStack Query for efficient data fetching and state management."
           ],
         },
         {
@@ -437,8 +437,7 @@ const WORK_LOCATION = {
           position: "top-25 left-30",
           description: [
             "AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic rendering, serverless workers, high-performance KV storage, and a global community feed.",
-            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations with instant loading and metadata persistence.",
-            "Side-by-Side Comparison: Interactive tools designed to visualize the direct transformation from a source architectural sketch to its AI-rendered counterpart.",
+            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations and Side-by-Side Comparison - an interactive to show the direct transformation a source image to its AI-rendered counterpart."
           ],
         },
         {
@@ -489,8 +488,7 @@ const WORK_LOCATION = {
           position: "top-5 right-10",
           description: [
             "Reel-lax is a user-friendly movie and TV show web application built with React, Vite, and Tailwind CSS. The platform offers an engaging experience for exploring content across categories like “Now Playing,” “Top Rated,” “Popular,” and “Upcoming.” The design prioritizes usability, responsiveness, and modern visual aesthetics.",
-            "Responsive Hero Banner: Eye-catching horizontal banners showcase featured content with a smooth, modern layout. Category Browsing: Explore movies and shows sorted into categories like Now Playing, Top Rated, Popular, and Upcoming.",
-            "Interactive Cards: Each content card displays key information including title, rating, and release date.Navigation Bar: Clean, intuitive navbar for quick access to Home, Movies, TV Shows, Anime, Games, Popular, and Upcoming sections. Sign In & Sign Up Pages: Styled forms with visually appealing input fields and buttons. Mobile-First Design: Fully responsive layouts, buttons, and cards that adapt to smaller screens."
+            "Responsive Hero Banner, Category Browsing, Interactive Cards, Navigation Bar, Sign In & Sign Up Pages, and a Mobile-First Design."
           ],
         },
         {
@@ -592,11 +590,7 @@ const WORK_LOCATION = {
           position: "top-15 right-40",
           description: [
             "Skinstric is an interactive AI-powered facial analysis web app that allows users to upload or scan their faces to receive automated demographic predictions such as age and race. Built with React, it offers a smooth, intuitive experience with real-time image preview, permission prompts, and animated loading states.",
-            "AI Face Analysis - Upload or scan your face to let the AI predict demographic data.",
-            "Camera and Gallery Access - Choose between capturing a live photo or selecting one from your device.",
-            "Instant Image Preview - See a preview of the uploaded image before analysis.",
-            "Animated Loading State - Displays a “Preparing your analysis…” animation while the AI processes the image.",
-            "Responsive Navigation - Includes dynamic navigation behavior and route-based visibility for buttons."
+            "AI Face Analysis, Camera and Gallery Access, Instant Image Preview, Animated Loading State, and Responsive Navigation."
           ],
         },
         {
