@@ -41,7 +41,7 @@ const Resume = () => {
       <div className="flex-1 overflow-y-auto bg-gray-100 px-4">
         <div className="flex justify-center py-4">
           <Document
-            file="files/Jean_Richardson_Frontend_Developer_Resume.pdf"
+            file="files/Jean Richardson Frontend Developer Resume.pdf"
             onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           >
             {Array.from(new Array(numPages), (_, index) => (
