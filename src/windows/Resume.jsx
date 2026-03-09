@@ -17,10 +17,10 @@ const Resume = () => {
       {/* Header */}
       <div id="window-header">
         <WindowControls target="resume" />
-        <h2>Jean_Richardson_Frontend_Developer_Resume.pdf</h2>
+        <h2>Jean Richardson Frontend Developer Resume.pdf</h2>
         
         <a
-          href="files/Jean_Richardson_Frontend_Developer_Resume.pdf"
+          href="files/Jean Richardson Frontend Developer Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           title="Open Resume in New Tab"
@@ -29,7 +29,7 @@ const Resume = () => {
         </a>
 
         <a
-          href="files/Jean_Richardson_Frontend_Developer_Resume.pdf"
+          href="files/Jean Richardson Frontend Developer Resume.pdf"
           download
           title="Download Resume"
         >
