@@ -124,7 +124,7 @@ const techStack = [
   },
   {
     category: "Styling",
-    items: ["Tailwind CSS", "Shadcn UI", "Bootstrap"],
+    items: ["Tailwind CSS", "Shadcn UI", "Lucide"],
   },
   {
     category: "Backend",
@@ -132,7 +132,7 @@ const techStack = [
   },
   {
     category: "Animations",
-    items: ["GSAP", "AOS"],
+    items: ["GSAP", "AOS", "Framer Motion"],
   },
   {
     category: "Tools",
@@ -322,7 +322,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-45 right-80 ",
-      windowPosition: "top-[12vh] right-15", // optional: Finder window position
+      windowPosition: "top-[50vh] right-10", // optional: Finder window position
       children: [
         {
           id: 1,
@@ -374,7 +374,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-0", // icon position inside Finder
-      windowPosition: "top-[25vh] right-30",
+      windowPosition: "top-[35vh] right-15",
       children: [
         {
           id: 1,
@@ -426,7 +426,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-50",
-      windowPosition: "top-[35vh] right-15",
+      windowPosition: "top-[25vh] right-25",
       children: [
         {
           id: 1,
@@ -477,7 +477,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-55",
-      windowPosition: "top-[50vh] right-40",
+      windowPosition: "top-[42vh] right-45",
       children: [
         {
           id: 1,
@@ -521,104 +521,53 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 5 Learnora
+    // ▶ Project 5 JR Canvas
     {
       id: 9,
-      name: "Learnora",
+      name: "JR Canvas",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-5",
-      windowPosition: "top-[60vh] right-15",
+      windowPosition: "top-[15vh] right-35",
       children: [
         {
           id: 1,
-          name: "Learnora.txt",
+          name: "JR Canvas.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "A modern Learning Management System (LMS) built with React, designed for an intuitive and engaging learning experience. Users can browse courses, view details, and navigate through a clean, responsive interface.",
-            "Course browsing, explore courses with categories and filters, course details page, learn more about each course, responsive UI/UX, optimized for desktop & mobile, smooth navigation, scroll-to-top, page transitions, and hover states, reusable components, built with clean react architecture."
+            "JR Canvas is a Figma-style design editor built with React + Vite + TypeScript featuring an infinite canvas, drawing tools, layers, assets, prototype connections, and full responsive interaction support for desktop, tablet, and mobile devices.",
+            "This project focuses on building a real canvas engine, not just UI — including pointer-based interactions, transform logic, state management, and dynamic rendering inside the canvas.. Users can browse courses, view details, and navigate through a clean, responsive interface."
           ],
         },
         {
           id: 2,
-          name: "Learnora.com",
+          name: "JR Canvas.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://jeanrichardson610.github.io/Learnora/",
+          href: "https://jr-canvas.vercel.app/",
           position: "top-50 left-20",
         },
         {
           id: 4,
-          name: "Learnora.png",
+          name: "JR Canvas.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-15 right-30",
-          imageUrl: "/images/Learnora.png",
+          imageUrl: "/images/JRcanvas.png",
         },
         {
           id: 5,
-          name: "Learnora.github",
+          name: "JR Canvas.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/Learnora",
+          href: "https://github.com/jeanrichardson610/JR-Canvas",
           position: "top-60 right-20",
-        },
-      ],
-    },
-
-    // ▶ Project 6 Skinstric AI
-    {
-      id: 10,
-      name: "Skinstric AI",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-45 right-30",
-      windowPosition: "top-[40vh] right-45",
-      children: [
-        {
-          id: 1,
-          name: "Skinstric AI.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-15 right-40",
-          description: [
-            "Skinstric is an interactive AI-powered facial analysis web app that allows users to upload or scan their faces to receive automated demographic predictions such as age and race. Built with React, it offers a smooth, intuitive experience with real-time image preview, permission prompts, and animated loading states.",
-            "AI Face Analysis, Camera and Gallery Access, Instant Image Preview, Animated Loading State, and Responsive Navigation."
-          ],
-        },
-        {
-          id: 2,
-          name: "SkinstricAI.com",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://skinstric-beta-steel.vercel.app/",
-          position: "top-20 left-20",
-        },
-        {
-          id: 4,
-          name: "Skinstric AI.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-52 left-80",
-          imageUrl: "/images/Skinstric.png",
-        },
-        {
-          id: 5,
-          name: "Skinstric AI.github",
-          icon: "/images/plain.png",
-          kind: "file",
-          fileType: "fig",
-          href: "https://github.com/jeanrichardson610/Skinstric-Beta",
-          position: "top-60 right-70",
         },
       ],
     },
