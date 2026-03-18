@@ -497,7 +497,7 @@ const WORK_LOCATION = {
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://reel-lax.onrender.com/",
+          href: "https://reel-lax.vercel.app/",
           position: "top-20 left-20",
         },
         {
