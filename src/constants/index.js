@@ -254,6 +254,22 @@ const gallery = [
     id: 17,
     img: "/images/gall16.jpeg",
   },
+  {
+    id: 18,
+    img: "/images/gall17.jpeg",
+  },
+  {
+    id: 19,
+    img: "/images/gall18.jpeg",
+  },
+  {
+    id: 20,
+    img: "/images/gall19.jpeg",
+  },
+  {
+    id: 21,
+    img: "/images/gall20.jpeg",
+  },
 ];
 
 const songs = [
