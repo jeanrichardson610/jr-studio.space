@@ -128,7 +128,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Puter", "Strapi"],
+    items: ["Puter", "Strapi", "ElysiaJS"],
   },
   {
     category: "Animations",
