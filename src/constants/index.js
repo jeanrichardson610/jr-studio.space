@@ -383,53 +383,53 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 2 Fitlytics
+    // ▶ Project 2 zero_trace
     {
       id: 6,
-      name: "Fitlytics",
+      name: "zero_trace",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-0", // icon position inside Finder
-      windowPosition: "top-[35vh] right-15",
+      windowPosition: "top-[25vh] right-25",
       children: [
         {
           id: 1,
-          name: "Fitlytics Project.txt",
+          name: "zero_trace Project.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "Fitlytics - A real-world Full Stack AI-powered fitness application using React JS, Strapi, and Tailwind CSS",
-            "A full stack fitness tracking app with AI-powered food image analysis, built with React and Strapi, styled with Tailwind CSS, and fully deployable online for free.",
-            "Track your fitness journey, set goals, log your meals and workouts, and get AI insights on the foods you eat by simply uploading images!",
+            "zero_trace is a private, ephemeral chat platform designed for instant, self-destructing conversations.",
+            "Users can join anonymously, share text, images, and GIFs in real-time, and communicate in secure rooms that automatically expire or can be manually destroyed.",
+            "Built for privacy and simplicity, zero_trace combines Next.js, Elysia, Redis, and Vercel Blob storage to deliver a fast, serverless, real-time messaging experience without leaving a trace.",
           ],
         },
         {
           id: 2,
-          name: "Fitlytics.com",
+          name: "zero_trace.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://fitness-tracker-lac-kappa.vercel.app/",
+          href: "https://zero-trace-six.vercel.app/",
           position: "top-10 right-45",
         },
         {
           id: 4,
-          name: "Fitlytics.png",
+          name: "zero_trace.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/Fitlytics.png",
+          imageUrl: "/images/zero_trace.png",
         },
         {
           id: 5,
-          name: "Fitlytics.github",
+          name: "zero_trace.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/Fitness_Tracker",
+          href: "https://github.com/jeanrichardson610/zero_trace",
           position: "top-65 right-30",
         },
       ],
@@ -442,7 +442,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-50",
-      windowPosition: "top-[25vh] right-25",
+      windowPosition: "top-[35vh] right-15",
       children: [
         {
           id: 1,
