@@ -57,6 +57,22 @@ const App = () => {
       setTimeout(start, 100);
     }
   }, []);
+
+  useEffect(() => {
+    const favicon = document.querySelector("link[rel='icon']");
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const updateFavicon = (e) => {
+      favicon.href = e.matches ? "/JR_white.svg" : "/JR_black.svg";
+    };
+
+    updateFavicon(media);
+    media.addEventListener("change", updateFavicon);
+
+    return () => media.removeEventListener("change", updateFavicon);
+  }, []);
+  
   return (
     <>
       <main>
