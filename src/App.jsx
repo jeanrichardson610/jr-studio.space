@@ -1,5 +1,5 @@
 import gsap from 'gsap'
-import { Draggable } from 'gsap/Draggable'
+import Draggable from 'gsap/Draggable'
 import React, { Suspense, lazy, useEffect, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
