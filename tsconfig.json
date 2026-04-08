@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["src"]
 }
