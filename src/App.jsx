@@ -15,7 +15,7 @@ const Image = lazy(() => import('./windows/Image.jsx'))
 const Contact = lazy(() => import('./windows/Contact.jsx'))
 const Photos = lazy(() => import('./windows/Photos.jsx'))
 const Music = lazy(() => import('./windows/Music.jsx'))
-const CaseStudy = lazy(() => import('./windows/CaseStudy.jsx'))
+const CaseStudy = lazy(() => import('./windows/temp.jsx'))
 const Trash = lazy(() => import('./windows/Trash.jsx'))
 
 gsap.registerPlugin(Draggable);
@@ -49,7 +49,7 @@ const App = () => {
       import('./windows/Contact.jsx');
       import('./windows/Photos.jsx');
       import('./windows/Music.jsx');
-      import('./windows/CaseStudy.jsx');
+      import('./windows/temp.jsx');
       import('./windows/Trash.jsx');
     };
     if ('requestIdleCallback' in window) {
