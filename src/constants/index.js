@@ -20,12 +20,12 @@ const navIcons = [
   {
     id: 1,
     img: "/icons/wifi.svg",
-    type: "wifi"
-  }, 
+    type: "wifi",
+  },
   {
     id: 2,
     img: "/icons/search.svg",
-    type: "safari"
+    type: "safari",
   },
   {
     id: 3,
@@ -38,12 +38,11 @@ const navIcons = [
     type: "finder",
     action: "about",
   },
-    {
+  {
     id: 5,
     img: "/icons/moon.svg",
-    type: "themeToggle"
-  }, 
-
+    type: "themeToggle",
+  },
 ];
 
 const dockApps = [
@@ -84,6 +83,12 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "caseStudy",
+    name: "KIK: UI/UX Case Study", // UI/UX case study project
+    icon: "kik.png",
+    canOpen: true,
+  },
+  {
     id: "trash", // unique id to avoid duplicate keys in Dock
     name: "Trash",
     icon: "trash.png",
@@ -93,7 +98,6 @@ const dockApps = [
 ];
 
 const blogPosts = [
-  
   {
     id: 1,
     date: "October 31, 2025",
@@ -104,7 +108,7 @@ const blogPosts = [
   {
     id: 2,
     date: "Novemeber 4, 2025",
-    title:"Venture - an Immersive GSAP animation landing page",
+    title: "Venture - an Immersive GSAP animation landing page",
     image: "/images/blog1.png",
     link: "https://jeanrichardson610.github.io/Venture/",
   },
@@ -137,7 +141,7 @@ const techStack = [
   {
     category: "Tools",
     items: ["Vercel", "GitHub", "Figma", "Adobe"],
-  }
+  },
 ];
 
 const socials = [
@@ -273,7 +277,6 @@ const gallery = [
 ];
 
 const songs = [
-  
   {
     id: 1,
     title: "Good Night - Lofi Cozy Chill Muisc",
@@ -308,7 +311,7 @@ const songs = [
     author: "lofidreams",
     src: "/audio/music5.mp3",
     cover: "/images/music5.jpg",
-  }
+  },
 ];
 
 export {
@@ -330,7 +333,6 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-
     // ▶ Project 1 Weather Dashboard
     {
       id: 5,
@@ -338,7 +340,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-45 right-80 ",
-      windowPosition: "top-[50vh] right-10", // optional: Finder window position
+      windowPosition: "top-[50vh] right-30", // optional: Finder window position
       children: [
         {
           id: 1,
@@ -350,7 +352,7 @@ const WORK_LOCATION = {
           description: [
             "A responsive weather application designed to deliver clear, multi-layered forecasts (current, hourly, daily) with a visually immersive UI that adapts to real-time weather conditions.",
             "Most weather apps overwhelm users with cluttered data or lack meaningful visualization and responsiveness.",
-            "The solution: a modern, responsive weather dashboard built with React, Tailwind CSS, and Shadcn UI, leveraging TanStack Query for efficient data fetching and state management."
+            "The solution: a modern, responsive weather dashboard built with React, Tailwind CSS, and Shadcn UI, leveraging TanStack Query for efficient data fetching and state management.",
           ],
         },
         {
@@ -390,7 +392,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-0", // icon position inside Finder
-      windowPosition: "top-[25vh] right-25",
+      windowPosition: "top-[28vh] right-20",
       children: [
         {
           id: 1,
@@ -442,7 +444,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-50",
-      windowPosition: "top-[35vh] right-15",
+      windowPosition: "top-[40vh] right-20",
       children: [
         {
           id: 1,
@@ -453,7 +455,7 @@ const WORK_LOCATION = {
           position: "top-25 left-30",
           description: [
             "AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic AI-rendering, serverless workers, high-performance KV storage, and a global community feed.",
-            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations with instant loading and metadata persistence."
+            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations with instant loading and metadata persistence.",
           ],
         },
         {
@@ -493,7 +495,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-55",
-      windowPosition: "top-[42vh] right-45",
+      windowPosition: "top-[42vh] right-65",
       children: [
         {
           id: 1,
@@ -504,7 +506,7 @@ const WORK_LOCATION = {
           position: "top-5 right-10",
           description: [
             "Reel-lax is a user-friendly movie and TV show web application built with React, Vite, and Tailwind CSS. The platform offers an engaging experience for exploring content across categories like “Now Playing,” “Top Rated,” “Popular,” and “Upcoming.” The design prioritizes usability, responsiveness, and modern visual aesthetics.",
-            "Responsive Hero Banner, Category Browsing, Interactive Cards, Navigation Bar, Sign In & Sign Up Pages, and a Mobile-First Design."
+            "Responsive Hero Banner, Category Browsing, Interactive Cards, Navigation Bar, Sign In & Sign Up Pages, and a Mobile-First Design.",
           ],
         },
         {
@@ -544,7 +546,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-5",
-      windowPosition: "top-[15vh] right-35",
+      windowPosition: "top-[15vh] right-20",
       children: [
         {
           id: 1,
@@ -555,7 +557,7 @@ const WORK_LOCATION = {
           position: "top-5 left-10",
           description: [
             "JR Canvas is a Figma-style design editor built with React + Vite + TypeScript featuring an infinite canvas, drawing tools, layers, assets, prototype connections, and full responsive interaction support for desktop, tablet, and mobile devices.",
-            "This project focuses on building a real canvas engine, not just UI — including pointer-based interactions, transform logic, state management, and dynamic rendering inside the canvas.. Users can browse courses, view details, and navigate through a clean, responsive interface."
+            "This project focuses on building a real canvas engine, not just UI — including pointer-based interactions, transform logic, state management, and dynamic rendering inside the canvas.. Users can browse courses, view details, and navigate through a clean, responsive interface.",
           ],
         },
         {
@@ -584,6 +586,65 @@ const WORK_LOCATION = {
           fileType: "fig",
           href: "https://github.com/jeanrichardson610/JR-Canvas",
           position: "top-60 right-20",
+        },
+      ],
+    },
+
+    // ▶ Project 6 Keep It Katelin Photography
+    {
+      id: 10,
+      name: "Keep It Katelin Photography",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-40 right-5",
+      windowPosition: "top-[60vh] right-10",
+      children: [
+        {
+          id: 1,
+          name: "Keep It Katelin Photography.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "Keep It Katelin is an immersive photography portfolio built with Next.js, featuring cinematic gallery transitions, performance-optimized image loading, and mobile-first swipe interactions designed to showcase visual work without distraction.",
+            "The goal was simple: Let the photography speak—while the UI stays out of the way. This a frontend and UI/UX case study project focused on creating a seamless, visually engaging experience that highlights the art of photography through thoughtful design and smooth interactions.",
+          ],
+        },
+        {
+          id: 2,
+          name: "KeepItKatelin.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://www.keepitkatelin.com/",
+          position: "top-60 left-20",
+        },
+        {
+          id: 4,
+          name: "KeepItKatelin.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-15 right-30",
+          imageUrl: "/images/keepitkatelin.jpg",
+        },
+        {
+          id: 5,
+          name: "Keep It Katelin.github",
+          icon: "/images/plain.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://github.com/jeanrichardson610/Keep-It-Katelin-Photography",
+          position: "top-60 right-20",
+        },
+        {
+          id: 6,
+          name: "Keep It Katelin.app",
+          icon: "/images/kik.png", 
+          kind: "app",
+          action: "openCaseStudy",
+          position: "top-30 left-40",
         },
       ],
     },
@@ -628,7 +689,7 @@ const ABOUT_LOCATION = {
         "Based in Phoenix, AZ, I care about performance, clarity, UX & UI experience whether it's reducing load times, solving annoying UX problems, or animating micro-interactions with GSAP or keeping it simple with CSS animations or AOS.",
         "Outside coding, I learn French with Duolingo and several grammar books. I find it helps my mind stay focused practicing pronunciation, comprehend what I'm hearing, and most importantly, being able to read a foreign language.",
       ],
-    }
+    },
   ],
 };
 
@@ -707,16 +768,83 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  music: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
-  trash: { isOpen: false, isMinimized: false, isMaximized: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  contact: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  resume: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  safari: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  photos: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  terminal: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  txtfile: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  imgfile: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  music: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  caseStudy: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  trash: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

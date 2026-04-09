@@ -4,9 +4,8 @@
 
 html,
 body {
-  width: 100dvw;
-  overflow: hidden;
-  height: 100dvh;
+  min-height: 100vh;
+  overflow-x: hidden;
   background-image: var(--wallpaper-url, url("/images/gall12.jpeg"));
   background-size: cover;
   background-repeat: no-repeat;
@@ -701,10 +700,11 @@ body {
 @media (max-width: 1200px) {
   .window-root {
     position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    margin: 0 !important;
+    inset: 0 !important;
+    transform: none !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
   }
 }
 
@@ -719,15 +719,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .window-root {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important; /* reset translate */
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-  }
+  
 
    #photos .gallery {
     max-height: 60vh; /* or any height that fits mobile screens */

@@ -82,8 +82,8 @@ const WindowWrapper = (Component, windowKey) => {
         el.style.right = '0';
         el.style.bottom = '0';
         // ensure it can span full viewport
-        el.style.width = '100dvw';
-        el.style.height = '100dvh';
+        el.style.width = '100vw';
+        el.style.height = '100vh';
         el.style.maxWidth = 'none';
         // neutralize any translate from CSS (e.g., -translate-y-1/2)
         el.style.transform = 'none';

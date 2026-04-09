@@ -8,19 +8,23 @@ import { Search } from "lucide-react/dist/esm/icons";
 import React from "react";
 
 const Finder = () => {
-
   const { openWindow, focusWindow } = useWindowStore();
 
   const { activeLocation, setActiveLocation } = useLocationStore();
 
   const openItem = (item) => {
-    if(item.fileType === 'pdf') return openWindow('resume');
-    if(item.fileType === 'txt') return openWindow('txtfile', item);
-    if(item.fileType === 'img') return openWindow('imgfile', item);
-    if(item.kind === 'folder') return setActiveLocation(item);
-    if(['fig', 'url'].includes(item.fileType) && item.href) return window.open(item.href, 'blank');
+    if (item.fileType === "pdf") return openWindow("resume");
+    if (item.fileType === "txt") return openWindow("txtfile", item);
+    if (item.fileType === "img") return openWindow("imgfile", item);
+    if (item.kind === "app" && item.action === "openCaseStudy") {
+      openWindow("caseStudy");
+      return;
+    }
+    if (item.kind === "folder") return setActiveLocation(item);
+    if (["fig", "url"].includes(item.fileType) && item.href)
+      return window.open(item.href, "blank");
 
-    openWindow(`${item.fileType} ${item.kind}`, item)
+    openWindow(`${item.fileType} ${item.kind}`, item);
   };
 
   const renderList = (name, items) => (
@@ -31,15 +35,20 @@ const Finder = () => {
           <li
             key={item.id}
             className={clsx(
-              item.id === activeLocation.id ? "active" : "not-active"
+              item.id === activeLocation.id ? "active" : "not-active",
             )}
             onClick={(e) => {
               e.stopPropagation();
               setActiveLocation(item);
-              focusWindow('finder');
+              focusWindow("finder");
             }}
           >
-            <img src={item.icon} className="w-4" alt={item.name} loading='lazy' />
+            <img
+              src={item.icon}
+              className="w-4"
+              alt={item.name}
+              loading="lazy"
+            />
             <p className="text-sm font-medium truncate">{item.name}</p>
           </li>
         ))}
@@ -51,9 +60,7 @@ const Finder = () => {
     <>
       <div id="window-header" className="window-drag-handle">
         <WindowControls target="finder" />
-        <h2 className="font-bold">
-          Jean's Portfolio
-        </h2>
+        <h2 className="font-bold">Jean's Portfolio</h2>
         <Search className="icon" />
       </div>
       <div className="flex bg-white h-full">
@@ -71,7 +78,7 @@ const Finder = () => {
                 openItem(item);
               }}
             >
-              <img src={item.icon} alt={item.name} loading='lazy' />
+              <img src={item.icon} alt={item.name} loading="lazy" />
               <p>{item.name}</p>
             </li>
           ))}
