@@ -23,26 +23,26 @@ const CaseStudy = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-  const ctx = gsap.context(() => {
-    const elements = containerRef.current?.querySelectorAll(".cs-animate");
+    const ctx = gsap.context(() => {
+      const elements = containerRef.current?.querySelectorAll(".cs-animate");
 
-    if (!elements || elements.length === 0) return;
+      if (!elements || elements.length === 0) return;
 
-    gsap.fromTo(
-      elements,
-      { opacity: 0, y: 18 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.06,
-        ease: "power2.out",
-      }
-    );
-  }, containerRef);
+      gsap.fromTo(
+        elements,
+        { opacity: 0, y: 18 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.06,
+          ease: "power2.out",
+        },
+      );
+    }, containerRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   const sectionData = useMemo(
     () => ({
@@ -98,7 +98,7 @@ const CaseStudy = () => {
           "This isn't just a static mockup; it shows design judgment, implementation skill, as well as the user research that informed the design decisions that resulted in a full product being shipped for professional use.",
           "The code view in the before/after section highlights some of the reusable systems I built to create a maintainable frontend architecture, as well as examples of how specific design decisions were implemented with code.",
           "The image preloading system, keyboard navigation, and swipe interaction engine are all examples of how I built thoughtful solutions to real UX problems that arose during the redesign process, and they demonstrate the depth of the frontend work that went into this project.",
-          "Feedback: The client informed me of some design edits she would like for me to implement. One of them was changing the logo with the copy to remove it and only keep the visual logo. This would make the logo bigger in the navbar and create a stronger visual impact, as well as simplify the header and make it feel more modern. I implemented this change in the redesign, and I think it was a great decision that improved the overall look and feel of the site.", 
+          "Feedback: The client informed me of some design edits she would like for me to implement. One of them was changing the logo with the copy to remove it and only keep the visual logo. This would make the logo bigger in the navbar and create a stronger visual impact, as well as simplify the header and make it feel more modern. I implemented this change in the redesign, and I think it was a great decision that improved the overall look and feel of the site.",
         ],
       },
       reflection: {
@@ -183,6 +183,8 @@ const CaseStudy = () => {
           <button
             type="button"
             onClick={() => closeWindow("caseStudy")}
+            onPointerDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
             className="rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
           >
             Close
@@ -740,7 +742,6 @@ useEffect(() => {
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
                     A genuine case study with real product value.
                   </h3>
-                  
                 </div>
                 <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
                   {sectionData.reflection.body.map((text) => (

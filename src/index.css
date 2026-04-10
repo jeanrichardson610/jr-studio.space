@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap") layer(base);
+@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap")
+layer(base);
 
 @import "tailwindcss";
 
@@ -10,11 +11,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
-  
+
   /* for GSAP opacity animation */
   --wallpaper-opacity: 1;
-  background-color: rgba(0,0,0,calc(1 - var(--wallpaper-opacity)));
+  background-color: rgba(0, 0, 0, calc(1 - var(--wallpaper-opacity)));
 }
 
 @theme {
@@ -44,7 +44,7 @@ body {
   .window-drag-handle {
     cursor: grab !important;
   }
-  
+
   .window-drag-handle:active {
     cursor: grabbing !important;
   }
@@ -56,15 +56,15 @@ body {
       @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
 
       div:last-child {
-  @apply flex items-center gap-3 max-sm:flex; /* ensure it's flex on mobile */
-}
+        @apply flex items-center gap-3 max-sm:flex; /* ensure it's flex on mobile */
+      }
     }
 
     .portfolio-wrapper {
       position: relative;
       display: inline-block;
       user-select: none; /* Prevent text selection during drag */
-      
+
       /* Ensure visible on mobile */
       @media (max-width: 640px) {
         display: inline-block !important;
@@ -93,7 +93,7 @@ body {
       left: -20px;
       width: 20px;
       height: 20px;
-      background-image: url('/images/overlay2.gif');
+      background-image: url("/images/overlay2.gif");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center bottom;
@@ -113,17 +113,17 @@ body {
     .logo-portfolio-container {
       @apply flex items-center gap-5;
       user-select: none;
-      
+
       /* Make smaller on mobile but keep on left */
       @media (max-width: 640px) {
         display: flex !important;
         gap: 0.75rem;
-        
+
         img {
           width: 24px;
           height: 24px;
         }
-        
+
         .portfolio-text {
           font-size: 0.875rem;
         }
@@ -180,7 +180,6 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
-
 .dark-mode #safari *,
 .dark-mode #terminal *,
 .dark-mode #contact *,
@@ -196,7 +195,7 @@ body {
 }
 
 .dark-mode #finder .sidebar * {
-  color: rgba(255, 255, 255, 0.8)
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .dark-mode .sidebar {
@@ -218,16 +217,21 @@ body {
 }
 
 #finder .sidebar li {
-  transition: background 0.25s ease, color 0.25s ease;
-}
-
-
-#music .sidebar ul li {
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 #music .sidebar ul li {
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+#music .sidebar ul li {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .dark-mode #finder .content {
@@ -243,7 +247,7 @@ body {
   background-color: #121218; /* match the window bg */
 }
 
-.dark-mode #imgfile button{
+.dark-mode #imgfile button {
   background: rgba(61, 61, 68, 0.95);
   color: #ffffff;
 }
@@ -251,7 +255,7 @@ body {
 .navbar {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
-  
+
   color: black;
 }
 
@@ -262,7 +266,6 @@ body {
   color: white;
 }
 
-
 .dark-mode .navbar * {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -272,14 +275,14 @@ body {
 }
 
 .navbar {
-  transition: 
+  transition:
     background 0.4s ease,
     color 0.3s ease,
     border 0.4s ease;
 }
 
 .navbar img {
-  transition: 
+  transition:
     filter 0.4s ease,
     transform 0.2s ease;
 }
@@ -314,7 +317,7 @@ body {
     width: 600px;
     height: 200px;
     z-index: 0;
-    
+
     /* Hide on mobile */
     @media (max-width: 640px) {
       display: none;
@@ -348,7 +351,6 @@ body {
       img[src*="trash.png"] {
         @apply scale-92;
       }
-
     }
   }
 
@@ -528,13 +530,19 @@ body {
         column-gap: 0.625rem; /* 2.5 * 0.25rem */
       }
       @media (min-width: 640px) {
-        .gallery ul { column-count: 3; }
+        .gallery ul {
+          column-count: 3;
+        }
       }
       @media (min-width: 768px) {
-        .gallery ul { column-count: 4; }
+        .gallery ul {
+          column-count: 4;
+        }
       }
       @media (min-width: 1920px) {
-        .gallery ul { column-count: 6; }
+        .gallery ul {
+          column-count: 6;
+        }
       }
 
       li {
@@ -677,7 +685,7 @@ body {
 
       .cover {
         @apply w-full flex justify-center mb-6;
-        
+
         img {
           @apply w-110 h-64 max-w-full rounded-2xl shadow-lg object-cover;
         }
@@ -685,14 +693,13 @@ body {
 
       .sliders {
         @apply flex items-center gap-3 w-full overflow-hidden;
-        
+
         input[type="range"] {
           @apply flex-1 min-w-0;
         }
       }
     }
-    }
-
+  }
 }
 
 /* MOBILE VIEW SECTION */
@@ -700,11 +707,10 @@ body {
 @media (max-width: 1200px) {
   .window-root {
     position: fixed !important;
-    inset: 0 !important;
-    transform: none !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
   }
 }
 
@@ -712,16 +718,22 @@ body {
   #home ul {
     display: none;
   }
-
-  .gallery {
-    
-  }
+  
 }
 
 @media (max-width: 768px) {
-  
+  .window-root {
+    position: static !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: none !important; /* reset translate */
+    width: 100% !important;
+    max-width: 600px;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
 
-   #photos .gallery {
+  #photos .gallery {
     max-height: 60vh; /* or any height that fits mobile screens */
     overflow-y: auto; /* allow vertical scrolling */
     padding: 1rem; /* optional: add padding for spacing */
@@ -731,7 +743,7 @@ body {
     @apply hidden;
   }
 
- /* Make the finder content a centered grid */
+  /* Make the finder content a centered grid */
   #finder .content {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -786,12 +798,12 @@ body {
     width: 100% !important;
   }
 
-   /* Hide Safari blog images */
+  /* Hide Safari blog images */
   .blog-post img {
     display: none !important;
   }
 
-   #terminal .techstack {
+  #terminal .techstack {
     padding: 1rem !important; /* reduce padding if needed */
     overflow-x: auto; /* allow horizontal scrolling if content is wide */
   }
@@ -802,7 +814,7 @@ body {
     gap: 0.5rem;
   }
 
-/* Center the window header title */
+  /* Center the window header title */
   #terminal #window-header h2 {
     text-align: center;
     padding-right: 35px;
@@ -810,7 +822,7 @@ body {
     margin: 0 auto; /* Center horizontally */
   }
 
- /* Hide the Category / Technologies row on mobile */
+  /* Hide the Category / Technologies row on mobile */
   #terminal .techstack .label {
     display: none;
   }
@@ -818,25 +830,25 @@ body {
   /* Allow tech stack items to wrap nicely */
   #terminal .techstack .content li {
     display: flex;
-  flex-direction: column; /* stack category row + items below */
-  align-items: flex-start;
-  gap: 0.25rem;
-  padding-left: 0;
+    flex-direction: column; /* stack category row + items below */
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-left: 0;
   }
 
   #terminal .techstack .content li .category-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* spacing between check and category */
-  width: 100%;
-}
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* spacing between check and category */
+    width: 100%;
+  }
 
   #terminal .techstack .content li h3 {
     margin-bottom: 0.25rem;
-    margin: 0;          /* remove default margin */
-  padding-left: 0;    /* remove any padding */
-  text-align: left;
-  width: 100%;        /* make it full width */
+    margin: 0; /* remove default margin */
+    padding-left: 0; /* remove any padding */
+    text-align: left;
+    width: 100%; /* make it full width */
   }
 
   #terminal .techstack .content li ul {
@@ -852,7 +864,7 @@ body {
   }
 
   #terminal .techstack .content li ul li p {
-   display: none;
+    display: none;
   }
 
   #terminal .techstack .footnote p {
@@ -866,17 +878,16 @@ body {
     margin: 0 auto; /* Center horizontally */
   }
 
-   #contact #window-header h2 {
+  #contact #window-header h2 {
     text-align: center;
     padding-right: 30px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
   }
 
-  #txtfile h2{
+  #txtfile h2 {
     padding-right: 30px;
   }
-
 
   /* Let main content expand */
   .window-root .flex.w-full.flex-1 {
