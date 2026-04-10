@@ -183,79 +183,69 @@ const CaseStudy = () => {
         </div>
       </header>
 
-      <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 2xl:grid-cols-[240px_minmax(0,1fr)]">
-        <aside className="hidden lg:block border-b border-white/10 p-4 2xl:border-b-0 2xl:border-r 2xl:p-5">
-          <div className="w-full">
-            <div className="mx-auto w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 p-4">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/45">
-                Navigation
-              </p>
+      <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)]">
+  <aside className="hidden lg:block min-w-0 border-b border-white/10 p-4 lg:border-b-0 lg:border-r lg:p-5">
+    <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-4">
+      <p className="text-xs uppercase tracking-[0.3em] text-white/45">
+        Navigation
+      </p>
 
-              {/* NAV ITEMS */}
-              <div className="mt-3 flex gap-2 overflow-x-auto 2xl:block 2xl:space-y-2">
-                {NAV_ITEMS.map((item, index) => (
-                  <button
-                    key={item.id}
-                    onClick={() => goToSection(item.id)}
-                    className={`shrink-0 rounded-2xl border px-3 py-2 text-sm transition whitespace-nowrap 2xl:w-full 2xl:text-left
-            ${
-              activeSection === item.id
-                ? "border-white/20 bg-white/10 text-white"
-                : "border-white/10 text-white/80 hover:bg-white/10 hover:text-white"
-            }
-          `}
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <span>{item.label}</span>
-
-                      {/* Hide numbers on horizontal to save space */}
-                      <span className="hidden lg:block text-[10px] uppercase tracking-[0.25em] text-white/35">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                  </button>
-                ))}
-              </div>
+      <div className="mt-3 flex flex-col gap-2">
+        {NAV_ITEMS.map((item, index) => (
+          <button
+            key={item.id}
+            onClick={() => goToSection(item.id)}
+            className={`w-full rounded-2xl border px-3 py-2 text-left text-sm transition
+              ${
+                activeSection === item.id
+                  ? "border-white/20 bg-white/10 text-white"
+                  : "border-white/10 text-white/80 hover:bg-white/10 hover:text-white"
+              }`}
+          >
+            <div className="flex items-center justify-between gap-3 min-w-0">
+              <span className="truncate">{item.label}</span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">
+                {String(index + 1).padStart(2, "0")}
+              </span>
             </div>
-          </div>
+          </button>
+        ))}
+      </div>
+    </div>
 
-          {/* LINKS (optional: hide in horizontal mode) */}
-          <div className="mt-6 mx-auto w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 p-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/45">
-              Links
-            </p>
+    <div className="mt-6 w-full rounded-3xl border border-white/10 bg-white/5 p-4">
+      <p className="text-xs uppercase tracking-[0.3em] text-white/45">
+        Links
+      </p>
 
-            <div className="mt-3 flex gap-2 overflow-x-auto 2xl:block 2xl:space-y-2">
-              <a
-                href="https://www.keepitkatelin.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 shrink-0 rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition whitespace-nowrap"
-              >
-                View live site
-              </a>
-              <a
-                href="https://github.com/jeanrichardson610/Keep-It-Katelin-Photography"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 shrink-0 rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition whitespace-nowrap"
-              >
-                View GitHub
-              </a>
-            </div>
-          </div>
-        </aside>
-
-        <main
-          ref={mainRef}
-          className="overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6"
-          onScroll={handleScroll}
+      <div className="mt-3 flex flex-col gap-2">
+        <a
+          href="https://www.keepitkatelin.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
         >
+          View live site
+        </a>
+        <a
+          href="https://github.com/jeanrichardson610/Keep-It-Katelin-Photography"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
+        >
+          View GitHub
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main
+    ref={mainRef}
+    className="min-w-0 w-full overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6"
+    onScroll={handleScroll}
+  >
           <div
-            className="space-y-8 pb-32
-    w-full
-    2xl:max-w-6xl
-    2xl:mx-auto 2xl:-translate-x-16"
+            className="space-y-8 pb-32 w-full 2xl:max-w-6xl 2xl:mx-auto 2xl:-translate-x-16"
           >
             <section
               id="overview"
