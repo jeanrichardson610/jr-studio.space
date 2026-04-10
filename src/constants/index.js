@@ -132,7 +132,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Puter", "Strapi", "ElysiaJS"],
+    items: ["REST APIs", "Strapi", "ElysiaJS"],
   },
   {
     category: "Animations",
@@ -140,7 +140,7 @@ const techStack = [
   },
   {
     category: "Tools",
-    items: ["Vercel", "GitHub", "Figma", "Adobe"],
+    items: ["Git", "GitHub", "Vercel", "Figma", "Adobe"],
   },
 ];
 
