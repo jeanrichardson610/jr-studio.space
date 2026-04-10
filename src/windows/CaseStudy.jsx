@@ -774,6 +774,6 @@ useEffect(() => {
   );
 };
 
-const CasestudyWindow = WindowWrapper(CaseStudy, "caseStudy");
+const CasestudyWindow = WindowWrapper(CaseStudy, "caseStudy", "page");
 
 export default CasestudyWindow;

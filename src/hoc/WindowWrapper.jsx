@@ -4,7 +4,7 @@ import React, { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap';
 import Draggable from 'gsap/Draggable';
 
-const WindowWrapper = (Component, windowKey) => {
+const WindowWrapper = (Component, windowKey, type = "window") => {
 
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
@@ -140,7 +140,7 @@ const WindowWrapper = (Component, windowKey) => {
         id={windowKey} 
         ref={ref} 
         style={{zIndex}} 
-        className='absolute window-root'
+        className={`absolute ${type === "window" ? "window-root" : "page-window"}`}
         onClick={() => focusWindow(windowKey)}>
           <Component {...props} />
       </section>
