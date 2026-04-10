@@ -241,11 +241,11 @@ const CaseStudy = () => {
 
   <main
     ref={mainRef}
-    className="min-w-0 w-full overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6"
+    className="min-w-0 w-full overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6 "
     onScroll={handleScroll}
   >
           <div
-            className="space-y-8 pb-32 w-full 2xl:max-w-6xl 2xl:mx-auto 2xl:-translate-x-16"
+            className="space-y-8 pb-32 w-full 2xl:max-w-7xl 2xl:mx-auto "
           >
             <section
               id="overview"
