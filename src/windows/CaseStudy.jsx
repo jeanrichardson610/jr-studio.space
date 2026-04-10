@@ -180,15 +180,6 @@ const CaseStudy = () => {
 
         <div className="flex items-center gap-2">
           <WindowControls target="caseStudy" />
-          <button
-            type="button"
-            onClick={() => closeWindow("caseStudy")}
-            onPointerDown={(e) => e.stopPropagation()}
-            onTouchStart={(e) => e.stopPropagation()}
-            className="rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
-          >
-            Close
-          </button>
         </div>
       </header>
 
