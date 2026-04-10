@@ -184,7 +184,7 @@ const CaseStudy = () => {
       </header>
 
       <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 2xl:grid-cols-[240px_minmax(0,1fr)]">
-        <aside className="hidden 2xl:block border-b border-white/10 p-4 2xl:border-b-0 2xl:border-r 2xl:p-5">
+        <aside className="hidden lg:block border-b border-white/10 p-4 2xl:border-b-0 2xl:border-r 2xl:p-5">
           <div className="w-full">
             <div className="mx-auto w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-white/45">
@@ -209,7 +209,7 @@ const CaseStudy = () => {
                       <span>{item.label}</span>
 
                       {/* Hide numbers on horizontal to save space */}
-                      <span className="hidden 2xl:block text-[10px] uppercase tracking-[0.25em] text-white/35">
+                      <span className="hidden lg:block text-[10px] uppercase tracking-[0.25em] text-white/35">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
