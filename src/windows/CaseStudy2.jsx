@@ -6,20 +6,20 @@ import useWindowStore from "#store/window";
 import { WindowControls } from "#components";
 
 const NAV_ITEMS = [
-  { id: "overview", label: "Overview" },
-  { id: "problem", label: "The Problem" },
-  { id: "goals", label: "Goals" },
-  { id: "compare", label: "Before / After" },
-  { id: "process", label: "Process" },
-  { id: "ui", label: "UI System" },
-  { id: "build", label: "Build" },
-  { id: "reflection", label: "Reflection" },
+  { id: "Overview", label: "Overview" },
+  { id: "Problem", label: "The Problem" },
+  { id: "Goals", label: "Goals" },
+  { id: "Compare", label: "Light / Dark" },
+  { id: "Process", label: "Process" },
+  { id: "UI", label: "UI System" },
+  { id: "Build", label: "Build" },
+  { id: "Reflection", label: "Reflection" },
 ];
 
-const CaseStudy = () => {
+const CaseStudy2 = () => {
   const [activeView, setActiveView] = useState("design");
   const [slider, setSlider] = useState(50);
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeSection, setActiveSection] = useState("Overview");
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -49,67 +49,73 @@ const CaseStudy = () => {
       overview: {
         title: "Overview",
         body: [
-          "Keep It Katelin is a real site I originally built in WordPress and later rebuilt with a cleaner UX, stronger hierarchy, and a more polished frontend experience.",
-          "This version is positioned as a product-style redesign case study so visitors can see both the visual outcome and the thinking behind it.",
+          "JR Canvas is an interactive, system-driven canvas interface designed to explore how flexible layout tools can be built in the browser with real-time interaction and state-driven UI behavior.",
+          "This project is positioned as a product-level interface rather than a static design exercise. It focuses on how users create, manipulate, and organize visual elements in a dynamic environment.",
         ],
       },
+
       problem: {
         title: "The Problem",
         body: [
-          "The earlier version did the job, but the experience was not as clear or refined as it could be.",
-          "The redesign focused on improving navigation clarity, reducing visual clutter, strengthening mobile behavior, and making the site feel more modern and intentional.",
+          "Most canvas-style tools are either overly simplistic (limited interactions) or overly complex (steep learning curves and poor usability).",
+          "The challenge was to design a system that feels flexible like a design tool, but remains intuitive for non-technical users.",
+          "This required balancing interaction depth with cognitive load, while maintaining performance and predictable behavior across state changes.",
         ],
         bullets: [
-          "Weak content hierarchy",
-          "Older WordPress feel",
-          "Less consistent spacing and rhythm",
-          "Needed a stronger mobile-first experience",
+          "How do you manage complex UI state without overwhelming the user?",
+          "How do you design interactions that scale beyond simple drag-and-drop?",
+          "How do you maintain performance in a continuously updating UI system?",
+          "How do you make a powerful tool still feel intuitive on first use?",
         ],
       },
+
       goals: {
         title: "Goals",
         bullets: [
-          "Make the site easier to scan and navigate",
-          "Create a more premium, modern visual language",
-          "Improve responsiveness across screen sizes",
-          "Rebuild the experience with stronger frontend structure",
+          "Design a flexible canvas system for dynamic layout creation",
+          "Support real-time interaction with multiple UI states",
+          "Build intuitive drag, select, and transform behaviors",
+          "Maintain predictable UX even under complex user actions",
         ],
       },
+
       process: {
         title: "Process",
         body: [
-          "I started by identifying friction points in the original experience, then reorganized the layout around clearer content priorities.",
-          "From there, I refined spacing, typography, component consistency, and interaction cues so the site felt more deliberate from section to section.",
+          "I began by breaking the problem into interaction primitives: selection, movement, transformation, and layering.",
+          "From there, I mapped how state changes propagate through the UI to ensure interactions remain predictable and reversible.",
+          "The focus shifted from visual design to behavioral design—defining how the system should respond to user intent rather than just how it should look.",
         ],
       },
+
       ui: {
         title: "UI System",
         bullets: [
-          "Clean typography hierarchy with more deliberate sizing and spacing",
-          "Consistent spacing scale applied across all components and layouts",
-          "Simplified card and panel styling with clearer interaction states",
-          "Responsive layouts designed for readability first and adapted for different screen sizes",
+          "State-driven canvas architecture with clear interaction modes",
+          "Component-based structure for reusable interactive elements",
+          "Layering system for managing visual hierarchy and selection priority",
+          "Consistent interaction patterns across drag, select, and transform states",
         ],
       },
+
       build: {
         title: "Build",
         body: [
-          "Because this is also a frontend project, my case study shows the code-side value too: component reuse, maintainable structure, and responsive interaction behavior.",
-          "This isn't just a static mockup; it shows design judgment, implementation skill, as well as the user research that informed the design decisions that resulted in a full product being shipped for professional use.",
-          "The code view in the before/after section highlights some of the reusable systems I built to create a maintainable frontend architecture, as well as examples of how specific design decisions were implemented with code.",
-          "The image preloading system, keyboard navigation, and swipe interaction engine are all examples of how I built thoughtful solutions to real UX problems that arose during the redesign process, and they demonstrate the depth of the frontend work that went into this project.",
-          "Feedback: The client informed me of some design edits she would like for me to implement. One of them was changing the logo with the copy to remove it and only keep the visual logo. This would make the logo bigger in the navbar and create a stronger visual impact, as well as simplify the header and make it feel more modern. I implemented this change in the redesign, and I think it was a great decision that improved the overall look and feel of the site.",
+          "This project is implemented as a real frontend system using React-based architecture and state-driven UI logic.",
+          "It demonstrates engineering alignment between interaction design and implementation, where every UX decision maps directly to a predictable state model.",
+          "Core systems include event handling layers for drag interactions, optimized re-rendering patterns, and performance-aware state updates for smooth real-time movement.",
+          "Rather than treating UI as static components, the system treats each element as an interactive entity with lifecycle, state transitions, and behavioral rules.",
         ],
       },
+
       reflection: {
         title: "Reflection",
         body: [
-          "This project works well as a flagship case study because it is authentic: I designed the original experience, identified the UX gaps, then redesigned and rebuilt it with a stronger product lens.",
-          "For frontend development, product design, and/or UI/UX roles, this story is concrete, believable, and much more useful than a purely conceptual redesign of a site. I fully designed the original, shipped it, then redesigned and rebuilt it with real modern users in mind, so I can speak to the full lifecycle of a project and the real-world impact of design decisions.",
-          "The before/after slider is a great way to show the visual difference, but the code view is where the depth really shines. It allows me to demonstrate that this is not just a visual redesign, but a thoughtfully built product with reusable components, maintainable structure, and responsive behavior that I designed based on user research and design principles.",
-          "This case study effectively communicates the value of design and frontend work by showing the real problems, the design thinking, and the actual code that went into creating a better experience for users.",
-          "If I were to iterate on this case study, I might consider adding more specific user feedback or metrics to show the impact of the redesign, but even without that, it tells a compelling story of design and development craftsmanship.",
-          "If you or anyone you know needs a designer/developer who can do end-to-end product work with a strong focus on UX and frontend implementation, please feel free to reach out! I'm always excited to connect with people who appreciate thoughtful design and well-crafted code.",
+          "JR Canvas represents a shift from traditional UI design into system-level product thinking.",
+          "The most important learning was that interaction design is not visual—it is behavioral architecture.",
+          "Designing complex UI systems requires thinking in terms of state, transitions, and constraints rather than screens or layouts.",
+          "This project strengthens my ability to bridge UX design decisions with frontend engineering implementation, especially in interactive, state-heavy interfaces.",
+          "If extended further, the next step would be adding persistence, collaboration (multi-user state), and undo/redo architecture to evolve it into a full design tool.",
         ],
       },
     }),
@@ -117,46 +123,47 @@ const CaseStudy = () => {
   );
 
   const goToSection = (id) => {
-    setActiveSection(id);
+  setActiveSection(id);
 
-    const container = mainRef.current;
-    const el = document.getElementById(id);
+  const container = mainRef.current;
+  const el = document.getElementById(id);
 
-    if (!container || !el) return;
+  if (!container || !el) return;
 
-    const containerTop = container.getBoundingClientRect().top;
-    const elTop = el.getBoundingClientRect().top;
+  const headerOffset = 140; // match CaseStudy.jsx behavior
 
-    const HEADER_OFFSET = 140;
+  const elementTop =
+    el.getBoundingClientRect().top - container.getBoundingClientRect().top;
 
-    container.scrollTo({
-      top: container.scrollTop + (elTop - containerTop) - HEADER_OFFSET,
-      behavior: "smooth",
-    });
-  };
+  container.scrollTo({
+    top: container.scrollTop + elementTop - headerOffset,
+    behavior: "smooth",
+  });
+};
 
   const handleScroll = () => {
-    const container = mainRef.current;
-    if (!container) return;
+  const container = mainRef.current;
+  if (!container) return;
 
-    const containerTop = container.getBoundingClientRect().top;
+  const containerTop = container.getBoundingClientRect().top;
 
-    let current = NAV_ITEMS[0].id;
+  let current = NAV_ITEMS[0].id;
 
-    NAV_ITEMS.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (!el) return;
+  NAV_ITEMS.forEach((item) => {
+    const el = document.getElementById(item.id);
+    if (!el) return;
 
-      const rect = el.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
 
-      if (rect.top - containerTop <= 120) {
-        current = item.id;
-      }
-    });
+    const offsetTop = rect.top - containerTop;
 
-    setActiveSection(current);
-  };
+    if (offsetTop <= 140) {
+      current = item.id;
+    }
+  });
 
+  setActiveSection(current);
+};
   const closeWindow = useWindowStore((state) => state.closeWindow);
 
   const mainRef = useRef(null);
@@ -173,120 +180,114 @@ const CaseStudy = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
             Case Study
           </p>
-          <h1 className="text-lg font-semibold md:text-2xl">
-            Keep It Katelin Photography
-          </h1>
+          <h1 className="text-lg font-semibold md:text-2xl">JR Canvas</h1>
         </div>
 
         <div className="flex items-center gap-2">
-          <WindowControls target="caseStudy" />
+          <WindowControls target="caseStudy2" />
         </div>
       </header>
 
       <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)]">
-  <aside className="hidden lg:block min-w-0 border-b border-white/10 p-4 lg:border-b-0 lg:border-r lg:p-5">
-    <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-4">
-      <p className="text-xs uppercase tracking-[0.3em] text-white/45">
-        Navigation
-      </p>
+        <aside className="hidden lg:block min-w-0 border-b border-white/10 p-4 lg:border-b-0 lg:border-r lg:p-5">
+          <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/45">
+              Navigation
+            </p>
 
-      <div className="mt-3 flex flex-col gap-2">
-        {NAV_ITEMS.map((item, index) => (
-          <button
-            key={item.id}
-            onClick={() => goToSection(item.id)}
-            className={`w-full rounded-2xl border px-3 py-2 text-left text-sm transition
+            <div className="mt-3 flex flex-col gap-2">
+              {NAV_ITEMS.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => goToSection(item.id)}
+                  className={`w-full rounded-2xl border px-3 py-2 text-left text-sm transition
               ${
                 activeSection === item.id
                   ? "border-white/20 bg-white/10 text-white"
                   : "border-white/10 text-white/80 hover:bg-white/10 hover:text-white"
               }`}
-          >
-            <div className="flex items-center justify-between gap-3 min-w-0">
-              <span className="truncate">{item.label}</span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+                >
+                  <div className="flex items-center justify-between gap-3 min-w-0">
+                    <span className="truncate">{item.label}</span>
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </button>
+              ))}
             </div>
-          </button>
-        ))}
-      </div>
-    </div>
+          </div>
 
-    <div className="mt-6 w-full rounded-3xl border border-white/10 bg-white/5 p-4">
-      <p className="text-xs uppercase tracking-[0.3em] text-white/45">
-        Links
-      </p>
+          <div className="mt-6 w-full rounded-3xl border border-white/10 bg-white/5 p-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/45">
+              Links
+            </p>
 
-      <div className="mt-3 flex flex-col gap-2">
-        <a
-          href="https://www.keepitkatelin.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
+            <div className="mt-3 flex flex-col gap-2">
+              <a
+                href="https://jr-canvas.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
+              >
+                View live site
+              </a>
+              <a
+                href="https://github.com/jeanrichardson610/Jr-Canvas"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
+              >
+                View GitHub
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <main
+          ref={mainRef}
+          className="min-w-0 w-full overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6 "
+          onScroll={handleScroll}
         >
-          View live site
-        </a>
-        <a
-          href="https://github.com/jeanrichardson610/Keep-It-Katelin-Photography"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
-        >
-          View GitHub
-        </a>
-      </div>
-    </div>
-  </aside>
-
-  <main
-    ref={mainRef}
-    className="min-w-0 w-full overflow-y-auto overflow-x-hidden overscroll-contain px-4 py-5 md:px-6 lg:px-6 "
-    onScroll={handleScroll}
-  >
-          <div
-            className="space-y-8 pb-32 w-full 2xl:max-w-7xl 2xl:mx-auto "
-          >
+          <div className="space-y-8 pb-32 w-full 2xl:max-w-7xl 2xl:mx-auto ">
             <section
-              id="overview"
+              id="Overview"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
                 <div className="space-y-5">
                   <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.25em] text-white/50">
                     <span className="rounded-full border border-white/10 px-3 py-1">
-                      Product Design
+                      Frontend Development
                     </span>
                     <span className="rounded-full border border-white/10 px-3 py-1">
-                      UI/UX
+                      Interaction Design
                     </span>
                     <span className="rounded-full border border-white/10 px-3 py-1">
-                      Frontend Build
+                      State Management
                     </span>
                   </div>
 
                   <div>
                     <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-                      A real redesign case study built from an existing project.
+                      Designing an Interactive Canvas Tool for Dynamic Layout
+                      Creation
                     </h2>
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-white/70 md:text-base">
-                      Keep It Katelin started as a WordPress site and was later
-                      rebuilt with better UX, cleaner hierarchy, and a more
-                      modern frontend presentation. This case study is meant to
-                      show both the design decisions and the implementation.
+                    <p className="mt-4 max-w-3xl text-sm leading-6 text-white/70 md:text-base">
+                      JR Canvas is a React-based interactive canvas system that demonstrates how complex UI behavior can be architected and implemented in a real frontend environment. The project focuses on the engineering behind interaction design decisions, showcasing how state-driven architecture enables flexible, intuitive user interactions in a dynamic layout tool while keeping it responsive for multiple screen sizes.
                     </p>
                   </div>
                   <div className="mt-8">
                     <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.01] mb-8">
                       <img
-                        src="/images/kik_demo.gif"
-                        alt="Keep It Katelin demo"
+                        src="/images/jr_canvas_demo.gif"
+                        alt="JR Canvas demo"
                         className="w-full h-auto rounded-2xl object-cover"
                       />
                     </div>
 
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      Interactive preview of the redesigned experience
+                      Demo of the JR Canvas experience.
                     </p>
                   </div>
                 </div>
@@ -297,7 +298,7 @@ const CaseStudy = () => {
                       Role
                     </p>
                     <p className="mt-2 text-sm text-white/80">
-                      UI/UX Designer + Frontend Developer
+                      Frontend Developer
                     </p>
                   </div>
                   <div className="rounded-3xl border border-white/10 bg-black/20 p-4">
@@ -305,8 +306,8 @@ const CaseStudy = () => {
                       Tools
                     </p>
                     <p className="mt-2 text-sm text-white/80">
-                      React, Next.js, Tailwind CSS, UX Design Principles, UX
-                      Research, UI Systems
+                      React, TypeScript, Tailwind CSS, UX Design Principles, UX
+                      Research, UI Systems, Zustand
                     </p>
                   </div>
                   <div className="rounded-3xl border border-white/10 bg-black/20 p-4 sm:col-span-2 lg:col-span-1">
@@ -314,8 +315,10 @@ const CaseStudy = () => {
                       Core idea
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/80">
-                      Show the original problem, the redesign thinking, and the
-                      final build in one interactive experience.
+                      Show the engineering behind interaction design decisions
+                      by building a real frontend system that demonstrates how
+                      complex UI behavior is architected and implemented, not
+                      just how it looks.
                     </p>
                   </div>
                 </div>
@@ -323,7 +326,7 @@ const CaseStudy = () => {
             </section>
 
             <section
-              id="problem"
+              id="Problem"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -332,24 +335,12 @@ const CaseStudy = () => {
                     The Problem
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    The original experience needed stronger clarity.
+                    Flexibility versus Usability: Designing a Canvas System that
+                    Scales in Interaction Depth without Overwhelming Users
                   </h3>
-                  <div className="mt-8">
-                    <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.01] mb-8">
-                      <img
-                        src="/images/old_kik_site.gif"
-                        alt="Old Keep It Katelin site gif"
-                        className="w-full h-auto rounded-2xl object-cover"
-                      />
-                    </div>
-
-                    <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      Visual gallery of the older site experience
-                    </p>
-                  </div>
                 </div>
 
-                <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
+                <div className="space-y-4 text-sm leading-6 text-white/75 md:text-base">
                   {sectionData.problem.body.map((text) => (
                     <p key={text}>{text}</p>
                   ))}
@@ -368,7 +359,7 @@ const CaseStudy = () => {
             </section>
 
             <section
-              id="goals"
+              id="Goals"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <p className="text-xs uppercase tracking-[0.35em] text-white/45">
@@ -392,16 +383,16 @@ const CaseStudy = () => {
             </section>
 
             <section
-              id="compare"
+              id="Compare"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                    Before / After
+                    Light / Dark
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    Use the slider to compare the redesign.
+                    Use the slider to compare the modes.
                   </h3>
                 </div>
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/20 p-1 text-xs uppercase tracking-[0.25em] text-white/65">
@@ -426,8 +417,8 @@ const CaseStudy = () => {
                 <div className="mt-6 space-y-4">
                   <div className="relative aspect-16/10 overflow-hidden rounded-[28px] border border-white/10 bg-black/30">
                     <img
-                      src="/images/old-preview.jpg"
-                      alt="Old Keep It Katelin preview"
+                      src="/images/grid_dark.jpg"
+                      alt="Dark mode preview"
                       className="absolute inset-0 h-full w-full object-cover  object-bottom"
                     />
 
@@ -438,12 +429,12 @@ const CaseStudy = () => {
                       }}
                     >
                       <img
-                        src="/images/new-preview.jpg"
-                        alt="New Keep It Katelin preview"
+                        src="/images/grid_light.jpg"
+                        alt="Light mode preview"
                         className="absolute inset-0 h-full w-full object-cover  object-top "
                       />
-                      <div className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white">
-                        New
+                      <div className="absolute left-4 top-4 rounded-full bg-black/90 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white">
+                        Light
                       </div>
                     </div>
 
@@ -453,7 +444,7 @@ const CaseStudy = () => {
                     />
 
                     <div className="absolute right-4 top-4 rounded-full bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white z-0">
-                      Old
+                      Dark
                     </div>
                   </div>
 
@@ -474,139 +465,190 @@ const CaseStudy = () => {
                 </div>
               ) : (
                 <div className="mt-6 grid gap-4 lg:grid-cols-2">
-                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
+                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5 lg:col-span-2">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Architecture
+                      State Architecture
+                    </p>
+                    <p className="mt-3 text-sm text-white/70">
+                      Objects are stored in a normalized structure, enabling
+                      scalable updates, layering, and multi-object interactions.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`<CaseStudy />
-  ├─ Hero / Overview
-  ├─ Problems / Goals
-  ├─ BeforeAfterSlider
-  ├─ Process / UI System
-  └─ Reflection / Links`}
+                      {`const useStore = create((set, get) => ({
+  pages: [],
+  currentPageId: '',
+  selectedIds: [],
+
+  updateObject: (id, updates) => {
+    set((s) => ({
+      pages: s.pages.map((p) =>
+        p.id === s.currentPageId
+          ? {
+              ...p,
+              objects: {
+                ...p.objects,
+                [id]: { ...p.objects[id], ...updates },
+              },
+            }
+          : p
+      ),
+    }));
+  },
+}));`}
                     </pre>
                   </div>
-                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
+                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5 lg:col-span-2">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                       Why this matters
                     </p>
-                    <p className="mt-4 text-sm leading-7 text-white/75">
-                      The code view reinforces that this is not just a visual
-                      redesign. It is a shipped interface with an actual
-                      structure, reusable sections, and a maintainable frontend
-                      implementation that I designed based off user research and
-                      design principles.
+                    <p className="mt-4 text-sm leading-6 text-white/75">
+                      JR Canvas is built as a state-driven interaction system
+                      where every user action—dragging, selecting, drawing,
+                      grouping—is mapped to predictable state transitions. The
+                      goal is not just rendering UI, but designing how the
+                      system behaves under complex user input.
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Image Preloading System
+                      Group-Aware Transformation System
+                    </p>
+                    <p className="mt-3 text-sm text-white/70">
+                      Objects inherit group behavior, allowing multiple elements
+                      to move as a single unit while respecting constraints like
+                      locking.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`// Preload images for smooth gallery transitions
-useEffect(() => {
-  const load = (gallery) => {
-    preloadAndDecode(gallery.background.src);
+                      {`onDragMove={(dx, dy) => {
+  const store = useStore.getState();
+  const page = store.getCurrentPage();
 
-    gallery.images.forEach((i) => {
-      preloadAndDecode(i.src);
+  const obj = page.objects[id];
+  if (!obj || obj.locked) return;
+
+  const deltaX = dx / zoomRef.current;
+  const deltaY = dy / zoomRef.current;
+
+  // if object is part of a group, move ALL siblings
+  if (obj.parentId) {
+    const groupId = obj.parentId;
+    const group = page.objects[groupId];
+    if (!group || group.type !== 'group') return;
+
+    (group.children as string[]).forEach((childId) => {
+      const child = page.objects[childId];
+      if (!child || child.locked) return;
+
+      store.updateObject(childId, {
+        x: child.x + deltaX,
+        y: child.y + deltaY,
+      });
     });
-  };
 
-  load(currentGallery);
-}, [currentGallery]);`}
+    return;
+  }
+
+  // normal single object move
+  store.updateObject(id, {
+    x: obj.x + deltaX,
+    y: obj.y + deltaY,
+  });
+}}`}
                     </pre>
-                    <p className="mt-4 text-sm leading-7 text-white/75">
-                      Prevents layout delay and image flicker during gallery
-                      transitions by decoding assets before render.
-                    </p>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Keyboard Navigation System
+                      Zoom-Consistent Coordiante Mapping
+                    </p>
+                    <p className="mt-3 text-sm text-white/70">
+                      Converts screen input into canvas space, ensuring precise
+                      interaction regardless of zoom or pan state.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`useEffect(() => {
-  const handleKey = (e) => {
-    if (e.repeat) return;
-    
-    if (e.key === "Escape" && selectedImage) closeModal();
-    
-    if (selectedImage) {
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
-      } else {
-        if (e.key === "ArrowRight") nextGallery();
-        if (e.key === "ArrowLeft") prevGallery();
-        }
-        };
-        
-        window.addEventListener("keydown", handleKey);
-        return () => window.removeEventListener("keydown", handleKey);
-        }, [selectedImage, selectedIndex, activeGallery]);`}
+                      {`const getCanvasPos = useCallback((clientX: number, clientY: number) => {
+  const rect = canvasRef.current!.getBoundingClientRect();
+  return screenToCanvas(
+    clientX - rect.left,
+    clientY - rect.top,
+    panXRef.current,
+    panYRef.current,
+    zoomRef.current
+  );
+}, []);`}
                     </pre>
-                    <p className="min-w-0 mt-4 text-sm leading-7 text-white/75">
-                      Dual-mode keyboard navigation depending on context
-                      (gallery vs modal), improving accessibility for mobile and
-                      desktop user experience with intuitive arrow key behavior.
-                    </p>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Swipe/Touch Interaction Engine
+                      State-Driven Interaction Engine
+                    </p>
+                    <p className="mt-3 text-sm text-white/70">
+                      Tool behavior dynamically changes based on state and user
+                      input, enabling complex interactions like constrained
+                      drawing and multi-mode input.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
-    touchStartTime.current = performance.now();
-    wasSwiping.current = false;
-    };
-    
-    const handleTouchEnd = (e) => {
-    const dx = e.changedTouches[0].clientX - touchStartX.current;
-    const dy = e.changedTouches[0].clientY - touchStartY.current;
-    
-    const dt = performance.now() - touchStartTime.current;
-    const velocity = Math.abs(dx) / dt;
-    
-    const horizontal = Math.abs(dx) > Math.abs(dy);
-    const threshold = Math.min(window.innerWidth * 0.15, 80);
-    
-    const valid = Math.abs(dx) > (velocity > 0.5 ? 20 : threshold);
-    
-    wasSwiping.current = horizontal && valid;
-    
-    if (!wasSwiping.current) return;
-    
-    const direction = dx < 0 ? 1 : -1;
-    
-    let steps = 1;
-    if (velocity > 1.2) steps = 3;
-    else if (velocity > 0.6) steps = 2;
-    
-    steps = Math.min(steps, 3);
-    
-    const newIndex =
-    (selectedIndex + direction * steps + currentGallery.images.length) %
-    currentGallery.images.length;
-    
-    changeImage(newIndex, direction === 1 ? "left" : "right");
-    };`}
+                      {`if (activeToolRef.current === 'pencil' && isDrawingRef.current) {
+  penPointsRef.current = [...penPointsRef.current, pos];
+  setPenPointsState([...penPointsRef.current]);
+  return;
+}
+
+if (isDrawingRef.current) {
+  drawCurrentRef.current = pos;
+
+  let x2 = pos.x;
+  let y2 = pos.y;
+
+  if (e.shiftKey && ['rectangle', 'circle', 'frame'].includes(activeToolRef.current)) {
+    const dx = pos.x - drawStartRef.current.x;
+    const dy = pos.y - drawStartRef.current.y;
+    const size = Math.max(Math.abs(dx), Math.abs(dy));
+
+    x2 = drawStartRef.current.x + Math.sign(dx) * size;
+    y2 = drawStartRef.current.y + Math.sign(dy) * size;
+  }
+
+  setDrawPreviewState({
+    x1: drawStartRef.current.x,
+    y1: drawStartRef.current.y,
+    x2,
+    y2,
+  });
+}`}
                     </pre>
-                    <p className="mt-4 text-sm leading-7 text-white/75">
-                      Velocity-based swipe detection with gesture filtering and
-                      multi-step navigation for fast flick interactions on
-                      mobile devices.
+                  </div>
+                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
+                    <p className="text-xs uppercase tracking-[0.35em] text-white/45">
+                      Zoom Handling Precision
                     </p>
+                    <p className="mt-3 text-sm text-white/70">
+                      Zoom handling that calculates new pan offsets to ensure
+                      the zoom focuses on the mouse position, demonstrating
+                      attention to interaction detail and user experience in
+                      dynamic viewport transformations.
+                    </p>
+                    <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
+                      {`const handleWheel = (e: WheelEvent) => {
+  if (e.ctrlKey || e.metaKey) {
+    const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+
+    const newZoom = Math.min(Math.max(zoom * factor, 0.02), 256);
+
+    const newPanX = mouseX - (mouseX - panX) * (newZoom / zoom);
+    const newPanY = mouseY - (mouseY - panY) * (newZoom / zoom);
+
+    setZoom(newZoom);
+    setPan(newPanX, newPanY);
+  }
+};`}
+                    </pre>
                   </div>
                 </div>
               )}
             </section>
 
             <section
-              id="process"
+              id="Process"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -615,10 +657,11 @@ useEffect(() => {
                     Process
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    From rough site critique to stronger information flow.
+                    From Interaction Primitives to System Architecture:
+                    Designing a State-Driven Canvas Experience
                   </h3>
                 </div>
-                <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
+                <div className="space-y-4 text-sm leading-6 text-white/75 md:text-base">
                   {sectionData.process.body.map((text) => (
                     <p key={text}>{text}</p>
                   ))}
@@ -627,7 +670,7 @@ useEffect(() => {
             </section>
 
             <section
-              id="ui"
+              id="UI"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <p className="text-xs uppercase tracking-[0.35em] text-white/45">
@@ -646,7 +689,7 @@ useEffect(() => {
             </section>
 
             <section
-              id="build"
+              id="Build"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -661,37 +704,28 @@ useEffect(() => {
                     <div className="flex gap-4">
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
                         <img
-                          src="/images/prev_kik_logo.svg"
-                          alt="Old Keep It Katelin logo"
+                          src="/images/jr_canvas_logo.png"
+                          alt="JR Canvas logo"
                           className="w-full h-auto rounded-2xl object-cover"
                         />
-                        <p className="text-center text-xs uppercase tracking-[0.25em] text-white/40">
-                          Old logo
-                        </p>
-                      </div>
-                      <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
-                        <img
-                          src="/images/current_kik_logo.svg"
-                          alt="New Keep It Katelin logo"
-                          className="w-full h-auto rounded-2xl object-cover"
-                        />
-                        <p className="text-center text-xs uppercase tracking-[0.25em] text-white/40">
-                          New logo
+                        <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
+                          Logo
                         </p>
                       </div>
                     </div>
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      The prior and current logos show the visual evolution
+                      Grid logo and simple UI elements were built as reusable
+                      React components
                     </p>
                   </div>
                 </div>
-                <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
+                <div className="space-y-4 text-sm leading-6 text-white/75 md:text-base">
                   {sectionData.build.body.map((text) => (
                     <p key={text}>{text}</p>
                   ))}
                   <div className="flex flex-wrap gap-3 pt-2">
                     <a
-                      href="https://www.keepitkatelin.com/"
+                      href="https://jr-canvas.vercel.app/"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:scale-[1.05]"
@@ -699,7 +733,7 @@ useEffect(() => {
                       View Live Site
                     </a>
                     <a
-                      href="https://github.com/jeanrichardson610/Keep-It-Katelin-Photography"
+                      href="https://github.com/jeanrichardson610/JR-Canvas"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
@@ -712,7 +746,7 @@ useEffect(() => {
             </section>
 
             <section
-              id="reflection"
+              id="Reflection"
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
@@ -721,10 +755,38 @@ useEffect(() => {
                     Reflection
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    A genuine case study with real product value.
+                    A real world tool with genuine product value, not just a
+                    design exercise.
                   </h3>
+                  <div className="mt-8">
+                    <div className="flex gap-4">
+                      <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
+                        <img
+                          src="/images/grid_mobile_light.jpg"
+                          alt="JR Canvas Mobile View Light Mode"
+                          className="w-full h-auto rounded-2xl object-cover"
+                        />
+                        <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
+                          Light
+                        </p>
+                      </div>
+                      <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
+                        <img
+                          src="/images/grid_mobile_dark.jpg"
+                          alt="JR Canvas Mobile View Dark Mode"
+                          className="w-full h-auto rounded-2xl object-cover"
+                        />
+                        <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
+                          Dark
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
+                      Responsive Mobile View: Light and Dark Mode
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
+                <div className="space-y-4 text-sm leading-6 text-white/75 md:text-base">
                   {sectionData.reflection.body.map((text) => (
                     <p key={text}>{text}</p>
                   ))}
@@ -764,6 +826,6 @@ useEffect(() => {
   );
 };
 
-const CasestudyWindow = WindowWrapper(CaseStudy, "caseStudy", "page");
+const Casestudy2Window = WindowWrapper(CaseStudy2, "caseStudy2", "page");
 
-export default CasestudyWindow;
+export default Casestudy2Window;

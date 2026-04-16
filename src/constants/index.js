@@ -89,6 +89,12 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "caseStudy2",
+    name: "JR Canvas: UI/UX Case Study", // UI/UX case study project
+    icon: "jr_canvas_logo.png",
+    canOpen: true,
+  },
+  {
     id: "trash", // unique id to avoid duplicate keys in Dock
     name: "Trash",
     icon: "trash.png",
@@ -587,6 +593,14 @@ const WORK_LOCATION = {
           href: "https://github.com/jeanrichardson610/JR-Canvas",
           position: "top-60 right-20",
         },
+        {
+          id: 6,
+          name: "JR Canvas.app",
+          icon: "/images/jr_canvas_logo.png", 
+          kind: "app",
+          action: "openCaseStudy2",
+          position: "top-30 left-40",
+        },
       ],
     },
 
@@ -832,6 +846,13 @@ const WINDOW_CONFIG = {
     data: null,
   },
   caseStudy: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  caseStudy2: {
     isOpen: false,
     isMinimized: false,
     isMaximized: false,
