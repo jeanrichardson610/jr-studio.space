@@ -595,7 +595,7 @@ const WORK_LOCATION = {
         },
         {
           id: 6,
-          name: "JR Canvas.app",
+          name: "JR Canvas Case Study.app",
           icon: "/images/jr_canvas_logo.png", 
           kind: "app",
           action: "openCaseStudy2",
@@ -654,7 +654,7 @@ const WORK_LOCATION = {
         },
         {
           id: 6,
-          name: "Keep It Katelin.app",
+          name: "Keep It Katelin Case Study.app",
           icon: "/images/kik.png", 
           kind: "app",
           action: "openCaseStudy",

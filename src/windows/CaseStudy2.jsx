@@ -419,7 +419,7 @@ const CaseStudy2 = () => {
                     <img
                       src="/images/grid_dark.jpg"
                       alt="Dark mode preview"
-                      className="absolute inset-0 h-full w-full object-cover  object-bottom"
+                      className="absolute inset-0 h-full w-full object-cover object-top"
                     />
 
                     <div
@@ -431,7 +431,7 @@ const CaseStudy2 = () => {
                       <img
                         src="/images/grid_light.jpg"
                         alt="Light mode preview"
-                        className="absolute inset-0 h-full w-full object-cover  object-top "
+                        className="absolute inset-0 h-full w-full object-cover object-top "
                       />
                       <div className="absolute left-4 top-4 rounded-full bg-black/90 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white">
                         Light
@@ -443,7 +443,7 @@ const CaseStudy2 = () => {
                       style={{ left: `${slider}%` }}
                     />
 
-                    <div className="absolute right-4 top-4 rounded-full bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white z-0">
+                    <div className="absolute right-4 top-4 rounded-full bg-black/90 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white z-0">
                       Dark
                     </div>
                   </div>
