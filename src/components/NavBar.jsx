@@ -29,9 +29,9 @@ const toggleTheme = () => {
   document.documentElement.classList.toggle("dark-mode", !newIsDay);
 
   // gall12 = default (moon)
-  // gall13 = day (sun)
+  // gall11 = day (sun)
   const wallpaperUrl = newIsDay
-    ? "/images/gall13.jpeg" // Sun / Day
+    ? "/images/gall11.jpeg" // Sun / Day
     : "/images/gall12.jpeg"; // Moon / Default
   // Animate icon like before
   if (themeIconRef.current) {

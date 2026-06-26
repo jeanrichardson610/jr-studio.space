@@ -140,15 +140,15 @@ const Welcome = React.memo(() => {
       <section id="welcome" ref={welcomeContainerRef}>
         <p ref={subtitleRef}>
           {renderText(
-            "Hey, I'm Jean! Welcome to my",
-            "text-xl sm:text-3xl font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide",
+            "Welcome to Jean Richardson's",
+            "text-xl sm:text-2xl md:text-4xl font-georama text-white  drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide",
             100
           )}
         </p>
         <h1 ref={titleRef} className="mt-7">
           {renderText(
             "portfolio",
-            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide" 
+            "text-8xl sm:text-7xl md:text-9xl italic font-georama text-white  drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] tracking-wide" 
           )}
         </h1>
        
