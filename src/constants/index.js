@@ -342,7 +342,7 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-    // ▶ Project 1 Weather Dashboard
+    // ▶ Project 1 JR Canvas
     {
       id: 5,
       name: "JR Canvas",

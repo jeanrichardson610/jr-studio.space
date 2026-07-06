@@ -20,6 +20,10 @@ const Finder = () => {
       openWindow("caseStudy");
       return;
     }
+    if (item.kind === "app" && item.action === "openCaseStudy2") {
+      openWindow("caseStudy2");
+      return;
+    }
     if (item.kind === "folder") return setActiveLocation(item);
     if (["fig", "url"].includes(item.fileType) && item.href)
       return window.open(item.href, "blank");
