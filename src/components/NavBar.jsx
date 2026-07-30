@@ -18,55 +18,54 @@ const NavBar = () => {
   const dateTimePlaceholderRef = useRef(null);
   const themeIconRef = useRef(null);
 
-  const [isDay, setIsDay] = useState(false); // Sun/Moon toggle, because false, Moon icon is default
+  const [isDay, setIsDay] = useState(false);
 
-  // Animate background and icon when theme changes
-  const overlayRef = useRef(null); // Add this at the top
+  const overlayRef = useRef(null);
 
-const toggleTheme = () => {
-  const newIsDay = !isDay;
+  const toggleTheme = () => {
+    const newIsDay = !isDay;
 
-  document.documentElement.classList.toggle("dark-mode", !newIsDay);
+    document.documentElement.classList.toggle("dark-mode", !newIsDay);
 
-  // gall12 = default (moon)
-  // gall11 = day (sun)
-  const wallpaperUrl = newIsDay
-    ? "/images/gall11.jpeg" // Sun / Day
-    : "/images/gall12.jpeg"; // Moon / Default
-  // Animate icon like before
-  if (themeIconRef.current) {
-    gsap.fromTo(
-      themeIconRef.current,
-      { scale: 0, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" }
-    );
-  }
+    const wallpaperUrl = newIsDay
+      ? "/images/gall11.jpeg"
+      : "/images/gall12.jpeg";
 
-  // Animate background smoothly using overlay
-  if (overlayRef.current) {
-    overlayRef.current.style.backgroundImage = `url('${wallpaperUrl}')`;
-    gsap.fromTo(
-      overlayRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-        onComplete: () => {
-          // Swap root background
-          document.documentElement.style.setProperty(
-            "--wallpaper-url",
-            `url('${wallpaperUrl}')`
-          );
-          // Hide overlay again
-          gsap.to(overlayRef.current, { opacity: 0, duration: 0.3 });
+    if (themeIconRef.current) {
+      gsap.fromTo(
+        themeIconRef.current,
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" },
+      );
+    }
+
+    if (overlayRef.current) {
+      overlayRef.current.style.backgroundImage = `url('${wallpaperUrl}')`;
+
+      gsap.fromTo(
+        overlayRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          onComplete: () => {
+            document.documentElement.style.setProperty(
+              "--wallpaper-url",
+              `url('${wallpaperUrl}')`,
+            );
+
+            gsap.to(overlayRef.current, {
+              opacity: 0,
+              duration: 0.3,
+            });
+          },
         },
-      }
-    );
-  }
+      );
+    }
 
-  setIsDay(newIsDay);
-};
+    setIsDay(newIsDay);
+  };
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -79,53 +78,105 @@ const toggleTheme = () => {
     if (!wrapper || !gif) return;
 
     gsap.set(gif, { opacity: 0, y: 8 });
-    if (logoPortfolioPlaceholder) gsap.set(logoPortfolioPlaceholder, { opacity: 0 });
+
+    if (logoPortfolioPlaceholder)
+      gsap.set(logoPortfolioPlaceholder, { opacity: 0 });
+
     if (dateTimePlaceholder) gsap.set(dateTimePlaceholder, { opacity: 0 });
 
-    const enter = () => gsap.to(gif, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" });
-    const leave = () => gsap.to(gif, { opacity: 0, y: 8, duration: 0.3, ease: "power3.out" });
+    const enter = () =>
+      gsap.to(gif, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+
+    const leave = () =>
+      gsap.to(gif, {
+        opacity: 0,
+        y: 8,
+        duration: 0.3,
+        ease: "power3.out",
+      });
 
     wrapper.addEventListener("mouseenter", enter);
     wrapper.addEventListener("mouseleave", leave);
 
-    // Draggable logo + portfolio
-    if (logoPortfolio && logoPortfolioPlaceholder) {
+    // Only enable dragging on tablet/desktop
+    if (logoPortfolio && logoPortfolioPlaceholder && window.innerWidth >= 640) {
       const snapThreshold = 500;
+
       Draggable.create(logoPortfolio, {
         type: "x,y",
         bounds: "body",
         cursor: "grab",
         activeCursor: "grabbing",
         zIndexBoost: false,
+
         onDragStart() {
-          gsap.to(logoPortfolioPlaceholder, { opacity: 1, duration: 0.2 });
+          gsap.to(logoPortfolioPlaceholder, {
+            opacity: 1,
+            duration: 0.2,
+          });
         },
+
         onDragEnd() {
-          if (Math.abs(this.x) < snapThreshold && Math.abs(this.y) < snapThreshold) {
-            gsap.to(this.target, { x: 0, y: 0, duration: 0.3, ease: "power2.out" });
+          if (
+            Math.abs(this.x) < snapThreshold &&
+            Math.abs(this.y) < snapThreshold
+          ) {
+            gsap.to(this.target, {
+              x: 0,
+              y: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
           }
-          gsap.to(logoPortfolioPlaceholder, { opacity: 0, duration: 0.2 });
+
+          gsap.to(logoPortfolioPlaceholder, {
+            opacity: 0,
+            duration: 0.2,
+          });
         },
       });
     }
 
-    // Draggable date & time
-    if (dateTime && dateTimePlaceholder) {
+    // Only enable date dragging on tablet/desktop
+    if (dateTime && dateTimePlaceholder && window.innerWidth >= 640) {
       const snapThreshold = 500;
+
       Draggable.create(dateTime, {
         type: "x,y",
         bounds: "body",
         cursor: "grab",
         activeCursor: "grabbing",
         zIndexBoost: false,
+
         onDragStart() {
-          gsap.to(dateTimePlaceholder, { opacity: 1, duration: 0.2 });
+          gsap.to(dateTimePlaceholder, {
+            opacity: 1,
+            duration: 0.2,
+          });
         },
+
         onDragEnd() {
-          if (Math.abs(this.x) < snapThreshold && Math.abs(this.y) < snapThreshold) {
-            gsap.to(this.target, { x: 0, y: 0, duration: 0.3, ease: "power2.out" });
+          if (
+            Math.abs(this.x) < snapThreshold &&
+            Math.abs(this.y) < snapThreshold
+          ) {
+            gsap.to(this.target, {
+              x: 0,
+              y: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
           }
-          gsap.to(dateTimePlaceholder, { opacity: 0, duration: 0.2 });
+
+          gsap.to(dateTimePlaceholder, {
+            opacity: 0,
+            duration: 0.2,
+          });
         },
       });
     }
@@ -138,7 +189,11 @@ const toggleTheme = () => {
 
   const handleNavLinkClick = (type) => {
     if (!type) return;
-    if (type === "finder") setActiveLocation(locations.work);
+
+    if (type === "finder") {
+      setActiveLocation(locations.work);
+    }
+
     openWindow(type);
   };
 
@@ -151,50 +206,74 @@ const toggleTheme = () => {
     }
 
     openWindow(type);
-    if (action === "about") setActiveLocation(locations.about);
+
+    if (action === "about") {
+      setActiveLocation(locations.about);
+    }
   };
 
   return (
     <nav className="navbar">
-      {/* Background overlay div */}
-  <div
-    ref={overlayRef}
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100vw",
-      height: "100vh",
-      pointerEvents: "none",
-      zIndex: -1,
-      opacity: 0,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  ></div>
-      <div>
-        {/* Draggable logo + portfolio */}
+      <div
+        ref={overlayRef}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          pointerEvents: "none",
+          zIndex: -1,
+          opacity: 0,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
+      {/* Left side */}
+      <div className="relative z-10">
         <div className="logo-portfolio-container" ref={logoPortfolioRef}>
           <img src="/images/main_logo.svg" alt="logo" />
+
           <div className="portfolio-wrapper" ref={wrapperRef}>
-            <p className="font-bold portfolio-text">Jean's Portfolio</p>
+            <p className="font-bold portfolio-text whitespace-nowrap">
+              Jean's Portfolio
+            </p>
+
             <div className="portfolio-text-container">
-              <div className="overlay-gif" ref={gifRef}></div>
+              <div className="overlay-gif" ref={gifRef} />
             </div>
           </div>
         </div>
-        <div className="logo-portfolio-placeholder" ref={logoPortfolioPlaceholderRef}></div>
 
-        <ul className="hidden sm:flex gap-5">
-          {navLinks.map(({ name, id, type }) => (
-            <li key={id} onClick={() => handleNavLinkClick(type)}>
-              <p>{name}</p>
-            </li>
-          ))}
-        </ul>
+        <div
+          className="logo-portfolio-placeholder"
+          ref={logoPortfolioPlaceholderRef}
+        />
+
+        {/* Nav links */}
+        <div className="relative z-50 pointer-events-auto">
+          <ul className="flex pl-4 gap-5">
+            {navLinks.map(({ name, id, type }) => (
+              <li
+                key={id}
+                onClick={() => handleNavLinkClick(type)}
+                className={`
+                  relative z-50
+                  touch-manipulation
+                  cursor-pointer
+                  ${type === "resume" ? "flex" : "hidden sm:flex"}
+                `}
+              >
+                <p className="whitespace-nowrap">{name}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div>
+      {/* Right side */}
+      <div className="relative z-10">
         <ul>
           {navIcons.map(({ id, img, type, action }) => {
             const iconSrc =
@@ -203,22 +282,19 @@ const toggleTheme = () => {
                   ? "/icons/sun.svg"
                   : "/icons/moon.svg"
                 : img;
-                
-               // Only show these three icons on mobile
-    const alwaysShowOnMobile = ["themeToggle", "wifi", "music"];
-    const hideOnMobile = !alwaysShowOnMobile.includes(type);
 
-    // Tailwind classes
-    const liClasses = hideOnMobile
-      ? "hidden md:flex"   // hide below 768px (md breakpoint), show md+
-      : "flex";            // always visible
+            const alwaysShowOnMobile = ["themeToggle", "wifi", "music"];
 
-    return (
-      <li
-        key={id}
-        onClick={() => handleIconClick({ type, action })}
-        className={liClasses}
-      >
+            const hideOnMobile = !alwaysShowOnMobile.includes(type);
+
+            const liClasses = hideOnMobile ? "hidden md:flex" : "flex";
+
+            return (
+              <li
+                key={id}
+                onClick={() => handleIconClick({ type, action })}
+                className={`${liClasses} relative z-50 pointer-events-auto touch-manipulation`}
+              >
                 <img
                   ref={type === "themeToggle" ? themeIconRef : null}
                   src={iconSrc}
@@ -230,9 +306,9 @@ const toggleTheme = () => {
           })}
         </ul>
 
-        {/* Draggable date & time */}
         <time ref={dateTimeRef}>{dayjs().format("ddd, MMM D • h:mm A")}</time>
-        <div className="datetime-placeholder" ref={dateTimePlaceholderRef}></div>
+
+        <div className="datetime-placeholder" ref={dateTimePlaceholderRef} />
       </div>
     </nav>
   );
