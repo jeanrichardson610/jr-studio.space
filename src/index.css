@@ -271,6 +271,7 @@ body {
   .icon {
     @apply p-1 hover:bg-gray-200 rounded hover:cursor-default;
   }
+  
   #welcome {
     @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10 z-0;
     user-select: none;
@@ -281,6 +282,7 @@ body {
       }
     }
   }
+
   .welcome-placeholder {
     position: fixed;
     top: 50%;
@@ -297,6 +299,7 @@ body {
       display: none;
     }
   }
+
   #dock {
     @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:scale-[0.8];
     .dock-container {
@@ -318,6 +321,7 @@ body {
       }
     }
   }
+
   #window-controls {
     @apply flex gap-2;
     .close {
@@ -334,6 +338,7 @@ body {
   #window-header {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
   }
+
   #safari {
     @apply w-4xl absolute top-20 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     .search {
@@ -367,6 +372,7 @@ body {
       }
     }
   }
+
   #terminal {
     @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     h2 {
@@ -402,6 +408,7 @@ body {
       }
     }
   }
+
   #contact {
     @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     h2 {
@@ -423,6 +430,7 @@ body {
       }
     }
   }
+
   #photos {
     @apply max-w-3xl h-[600px] absolute top-25 left-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
     .sidebar {
@@ -482,6 +490,7 @@ body {
       }
     }
   }
+
   #resume {
     /* Give the window a fixed height in non-maximized state so inner content can scroll */
     @apply w-fit h-[600px] absolute top-16 left-6/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
@@ -634,14 +643,18 @@ body {
     height: auto !important;
     margin: 0 !important;
   }
+
   #photos .gallery {
     max-height: 60vh; /* or any height that fits mobile screens */
     overflow-y: auto; /* allow vertical scrolling */
     padding: 1rem; /* optional: add padding for spacing */
   }
+
   .navbar time {
     @apply hidden;
-  } /* Make the finder content a centered grid */
+  } 
+
+  /* Make the finder content a centered grid */
   #finder .content {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -651,7 +664,9 @@ body {
     align-items: center;
     padding: 1rem; /* optional padding */
     position: static !important; /* remove absolute positioning from li */
-  } /* Ensure each li is positioned normally inside the grid */
+  } 
+
+  /* Ensure each li is positioned normally inside the grid */
   #finder .content li {
     position: static !important;
     display: flex;
@@ -660,48 +675,70 @@ body {
     justify-content: center;
     width: auto !important;
     height: auto !important;
-  } /* Images scale nicely inside grid */
+  } 
+  
+  /* Images scale nicely inside grid */
   #finder .content li img {
     width: 60px; /* or any size that fits your mobile screen */
     height: 60px;
-  } /* Text styling */
+  } 
+  
+  /* Text styling */
   #finder .content li p {
     text-align: center;
     font-size: 0.875rem; /* optional: smaller for mobile */
     margin-top: 0.25rem;
   }
+
   .dock {
     display: none;
-  } /* Hide all window sidebars */
+  } 
+  
+  /* Hide all window sidebars */
   .sidebar {
     display: none !important;
-  } /* Safari window header: hide all icons except WindowControls */
+  } 
+  
+  /* Safari window header: hide all icons except WindowControls */
   #safari #window-header .icon {
     display: none !important;
-  } /* Optional: make the search input full width if desired */
+  } 
+  
+  /* Optional: make the search input full width if desired */
   #safari #window-header .search input {
     width: 100% !important;
-  } /* Hide Safari blog images */
+  } 
+  
+  /* Hide Safari blog images */
   .blog-post img {
     display: none !important;
   }
+
   #terminal .techstack {
     padding: 1rem !important; /* reduce padding if needed */
     overflow-x: auto; /* allow horizontal scrolling if content is wide */
-  } /* Label row: stack vertically */
+  } 
+  
+  /* Label row: stack vertically */
   #terminal .techstack .label {
     flex-direction: column !important;
     gap: 0.5rem;
-  } /* Center the window header title */
+  } 
+  
+  /* Center the window header title */
   #terminal #window-header h2 {
     text-align: center;
     padding-right: 35px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
-  } /* Hide the Category / Technologies row on mobile */
+  } 
+  
+  /* Hide the Category / Technologies row on mobile */
   #terminal .techstack .label {
     display: none;
-  } /* Allow tech stack items to wrap nicely */
+  } 
+  
+  /* Allow tech stack items to wrap nicely */
   #terminal .techstack .content li {
     display: flex;
     flex-direction: column; /* stack category row + items below */
@@ -709,12 +746,14 @@ body {
     gap: 0.25rem;
     padding-left: 0;
   }
+
   #terminal .techstack .content li .category-row {
     display: flex;
     align-items: center;
     gap: 0.5rem; /* spacing between check and category */
     width: 100%;
   }
+
   #terminal .techstack .content li h3 {
     margin-bottom: 0.25rem;
     margin: 0; /* remove default margin */
@@ -722,6 +761,7 @@ body {
     text-align: left;
     width: 100%; /* make it full width */
   }
+
   #terminal .techstack .content li ul {
     flex-wrap: wrap;
     display: flex;
@@ -729,33 +769,42 @@ body {
     padding-left: 0;
     padding-bottom: 8px;
   }
+
   #terminal .techstack p {
     text-align: left;
   }
+
   #terminal .techstack .content li ul li p {
     display: none;
   }
+
   #terminal .techstack .footnote p {
     flex-wrap: wrap;
   }
+
   #music #window-header h2 {
     text-align: center;
     padding-right: 60px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
   }
+
   #contact #window-header h2 {
     text-align: center;
     padding-right: 30px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
   }
+
   #txtfile h2 {
     padding-right: 30px;
-  } /* Let main content expand */
+  } 
+  
+  /* Let main content expand */
   .window-root .flex.w-full.flex-1 {
     flex-direction: column;
   }
+
   /* RESUME MOBILE FIX */
   @media (max-width: 768px) {
     #resume {
