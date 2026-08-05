@@ -253,7 +253,7 @@ const NavBar = () => {
 
         {/* Nav links */}
         <div className="relative z-50 pointer-events-auto">
-          <ul className="flex pl-4 gap-5">
+          <ul className="nav-links flex pl-4 gap-5">
             {navLinks.map(({ name, id, type }) => (
               <li
                 key={id}
@@ -273,8 +273,8 @@ const NavBar = () => {
       </div>
 
       {/* Right side */}
-      <div className="relative z-10">
-        <ul>
+      <div className="relative z-10 max-sm:ml-8">
+        <ul className="nav-icons">
           {navIcons.map(({ id, img, type, action }) => {
             const iconSrc =
               type === "themeToggle"

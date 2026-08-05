@@ -10,9 +10,7 @@ body {
   background-image: var(--wallpaper-url, url("/images/gall12.jpeg"));
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-
-  /* for GSAP opacity animation */
+  background-position: center; /* for GSAP opacity animation */
   --wallpaper-opacity: 1;
   background-color: rgba(0, 0, 0, calc(1 - var(--wallpaper-opacity)));
 }
@@ -38,45 +36,33 @@ body {
 @layer base {
   main {
     @apply w-dvw h-dvh overflow-hidden;
-  }
-
-  /* Custom black grab cursor - using move cursor as fallback */
+  } /* Custom black grab cursor - using move cursor as fallback */
   .window-drag-handle {
     cursor: grab !important;
   }
-
   .window-drag-handle:active {
     cursor: grabbing !important;
   }
-
   nav {
-  @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-3 px-5 select-none;
-
-  > div {
-    @apply flex items-center gap-5;
-  }
-
-  > div:last-child {
-    @apply flex items-center gap-3;
-  }
-}
-
+    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-3 px-5 select-none;
+    div {
+      @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
+      div:last-child {
+        @apply flex items-center gap-3 max-sm:flex; /* ensure it's flex on mobile */
+      }
+    }
     .portfolio-wrapper {
       position: relative;
       display: inline-block;
-      user-select: none; /* Prevent text selection during drag */
-
-      /* Ensure visible on mobile */
+      user-select: none; /* Prevent text selection during drag */ /* Ensure visible on mobile */
       @media (max-width: 640px) {
         display: inline-block !important;
       }
     }
-
     .portfolio-text {
       position: relative;
       z-index: 1;
     }
-
     .portfolio-text-container {
       position: absolute;
       left: 0;
@@ -87,7 +73,6 @@ body {
       z-index: 0;
       pointer-events: none;
     }
-
     .overlay-gif {
       position: absolute;
       bottom: 0;
@@ -97,40 +82,36 @@ body {
       background-image: url("/images/overlay2.gif");
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center bottom;
-
-      /* layout / base transform only */
+      background-position: center bottom; /* layout / base transform only */
       transform: translateY(8px);
     }
-
-    ul {
-      @apply flex items-center gap-5;
-
+    nav-links {
+      @apply flex items-center gap-5 max-sm:hidden;
       p {
         @apply text-sm cursor-pointer hover:underline transition-all;
       }
     }
 
+    .nav-icons {
+      @apply flex items-center gap-5;
+      
+    }
+
     .logo-portfolio-container {
       @apply flex items-center gap-5;
-      user-select: none;
-
-      /* Make smaller on mobile but keep on left */
+      user-select: none; /* Make smaller on mobile but keep on left */
       @media (max-width: 640px) {
         display: flex !important;
         gap: 0.75rem;
-
         img {
           width: 24px;
           height: 24px;
         }
-
         .portfolio-text {
           font-size: 0.875rem;
         }
       }
     }
-
     .logo-portfolio-placeholder {
       position: absolute;
       border: 0.075rem dashed rgba(0, 0, 0, 0.5);
@@ -141,7 +122,6 @@ body {
       height: 30px; /* Approximate height */
       left: 0.7rem;
     }
-
     .datetime-placeholder {
       position: absolute;
       border: 0.075rem dashed rgba(0, 0, 0, 0.5);
@@ -153,13 +133,12 @@ body {
       top: 0.8rem;
       right: 0.8rem;
     }
-
     time {
       @apply text-sm font-medium text-black;
       user-select: none;
     }
   }
-
+}
 
 .dark-mode #finder,
 .dark-mode #safari,
@@ -242,7 +221,6 @@ body {
 .dark-mode .blog {
   background: rgba(22, 22, 30, 0.95);
 }
-
 /* Ensure the image fits nicely without extra white space */
 .dark-mode #imgfile .preview {
   background-color: #121218; /* match the window bg */
@@ -293,20 +271,16 @@ body {
   .icon {
     @apply p-1 hover:bg-gray-200 rounded hover:cursor-default;
   }
-
   #welcome {
     @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10 z-0;
     user-select: none;
-
     .small-screen {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-20;
-
       p {
         @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
       }
     }
   }
-
   .welcome-placeholder {
     position: fixed;
     top: 50%;
@@ -318,101 +292,74 @@ body {
     pointer-events: none;
     width: 600px;
     height: 200px;
-    z-index: 0;
-
-    /* Hide on mobile */
+    z-index: 0; /* Hide on mobile */
     @media (max-width: 640px) {
       display: none;
     }
   }
-
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:scale-[0.6];
-
+    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:scale-[0.8];
     .dock-container {
       @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
     }
-
     .tooltip {
       @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
     }
-
     .dock-icon {
       @apply size-14 3xl:size-20 cursor-pointer;
-
       img {
         @apply object-cover object-center;
-      }
-
-      /* Resize music icon */
+      } /* Resize music icon */
       img[src*="music.png"] {
         @apply scale-93;
-      }
-
-      /* Resize trash icon */
+      } /* Resize trash icon */
       img[src*="trash.png"] {
         @apply scale-92;
       }
     }
   }
-
   #window-controls {
     @apply flex gap-2;
-
     .close {
       @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
       pointer-events: auto; /* in case parent has pointer-events:none */
     }
-
     .minimize {
       @apply size-3.5 rounded-full bg-[#ffc030] cursor-pointer;
     }
-
     .maximize {
       @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
     }
   }
-
   #window-header {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
   }
-
   #safari {
     @apply w-4xl absolute top-20 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     .search {
       @apply flex items-center gap-3 w-2/3 bg-white border border-gray-300 rounded-lg px-3 py-2;
-
       input {
         @apply placeholder:text-gray-400;
       }
     }
-
     .blog {
       @apply bg-white p-10 max-w-3xl mx-auto;
-
       h2 {
         @apply text-xl font-bold text-purple-600 mb-10;
       }
-
       .blog-post {
         @apply grid grid-cols-12 space-x-5;
-
         img {
           @apply size-full rounded-md object-cover;
         }
-
         .content {
           @apply col-span-10 space-y-3;
-
           p {
             @apply text-xs text-gray-500;
           }
-
           h3 {
             @apply font-semibold text-base text-gray-800;
           }
-
           a {
             @apply text-blue-600 text-xs hover:underline flex items-center gap-3;
           }
@@ -420,45 +367,34 @@ body {
       }
     }
   }
-
   #terminal {
     @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
-
     .techstack {
       @apply text-sm font-roboto p-5;
-
       .label {
         @apply flex items-center ms-10 mt-7;
       }
-
       .content {
         @apply py-5 my-5 border-y border-dashed space-y-1;
-
         li {
           .check {
             @apply text-[#00A154] w-5;
           }
-
           h3 {
             @apply font-semibold text-[#00A154] w-32 ms-5;
           }
-
           ul {
             @apply flex items-center gap-3;
           }
         }
       }
-
       .footnote {
         @apply text-[#00A154] space-y-1;
-
         p {
           @apply flex items-center;
-
           svg {
             @apply w-5 me-5;
           }
@@ -466,67 +402,51 @@ body {
       }
     }
   }
-
   #contact {
     @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
-
     h3 {
       @apply text-xl font-semibold;
     }
-
     ul {
       @apply flex items-center gap-3;
-
       li {
         @apply rounded-lg p-3 w-60 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300;
-
         a {
           @apply space-y-5;
         }
-
         p {
           @apply font-semibold text-sm text-white;
         }
       }
     }
   }
-
   #photos {
     @apply max-w-3xl h-[600px] absolute top-25 left-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     .sidebar {
       @apply w-3/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
-
       h2 {
         @apply text-xs font-medium text-gray-400 mb-1;
       }
-
       ul {
         li {
           @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
-
           &:first-child {
             @apply bg-blue-100 text-blue-700;
           }
-
           img {
             @apply w-4;
           }
-
           p {
             @apply text-sm font-medium;
           }
         }
       }
     }
-
     .gallery {
       @apply p-5 flex-1 overflow-y-auto min-h-0;
-
       ul {
         column-count: 2;
         column-gap: 0.625rem; /* 2.5 * 0.25rem */
@@ -546,7 +466,6 @@ body {
           column-count: 6;
         }
       }
-
       li {
         display: inline-block;
         width: 100%;
@@ -563,139 +482,106 @@ body {
       }
     }
   }
-
   #resume {
     /* Give the window a fixed height in non-maximized state so inner content can scroll */
     @apply w-fit h-[600px] absolute top-16 left-6/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     #window-header {
       h2 {
         @apply font-bold text-sm text-center flex-1;
       }
     }
   }
-
   #finder {
     @apply absolute w-3xl left-40 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
-
     .sidebar {
       @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
-
       h3 {
         @apply text-xs font-medium text-gray-400 mb-1;
       }
-
       ul {
         @apply space-y-1;
-
         .active {
           @apply bg-blue-100 text-blue-700;
         }
-
         .not-active {
           @apply text-gray-700 hover:bg-gray-200;
         }
-
         li {
           @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
         }
       }
     }
-
     .content {
       @apply flex-1 p-8 bg-white max-w-2xl relative;
-
       li {
         @apply absolute flex items-center flex-col gap-3 cursor-pointer;
-
         img {
           @apply object-contain object-center size-16 relative group-hover:scale-105;
         }
-
         p {
           @apply text-sm text-center font-medium w-40;
         }
       }
     }
   }
-
   #txtfile {
     @apply w-md h-[550px] absolute top-36 right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     h2 {
       @apply font-bold text-sm text-center w-full;
     }
   }
-
   #imgfile {
     @apply w-xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     #window-header {
       p {
         @apply font-bold text-[#5f6266];
       }
     }
-
     .preview {
       @apply p-2 bg-gray-200 max-h-[70vh];
-
       img {
         @apply w-full h-fit object-contain object-center;
       }
     }
   }
-
   #home {
     @apply relative z-0 max-sm:hidden;
-
     ul {
       li {
         @apply absolute z-0 select-none flex items-center flex-col;
-
         img {
           @apply group-hover:bg-gray-950/10 p-1 rounded-md;
         }
-
         p {
           @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
         }
       }
     }
   }
-
   #music {
     @apply w-full max-w-[860px] h-[630px] absolute top-5 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
     .sidebar {
       @apply w-4/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
-
       h2 {
         @apply text-xs font-medium text-gray-400 mb-3;
       }
-
       ul {
         @apply space-y-2 overflow-y-auto min-h-0;
-
         li {
           @apply flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer transition-colors text-sm;
         }
       }
     }
-
     .player {
       @apply flex-1 p-8 flex flex-col items-center justify-center overflow-hidden min-h-0 w-full;
-
       .cover {
         @apply w-full flex justify-center mb-6;
-
         img {
           @apply w-110 h-64 max-w-full rounded-2xl shadow-lg object-cover;
         }
       }
-
       .sliders {
         @apply flex items-center gap-3 w-full overflow-hidden;
-
         input[type="range"] {
           @apply flex-1 min-w-0;
         }
@@ -705,7 +591,6 @@ body {
 }
 
 /* MOBILE VIEW SECTION */
-
 @media (max-width: 1200px) {
   .window-root {
     position: fixed !important;
@@ -714,14 +599,12 @@ body {
     transform: translate(-50%, -50%) !important;
     margin: 0 !important;
   }
-
 }
 
 @media (max-width: 1024px) {
   #home ul {
     display: none;
   }
-
   .window-root {
     position: fixed !important;
     top: 50% !important;
@@ -751,19 +634,14 @@ body {
     height: auto !important;
     margin: 0 !important;
   }
-
-   #photos .gallery {
+  #photos .gallery {
     max-height: 60vh; /* or any height that fits mobile screens */
     overflow-y: auto; /* allow vertical scrolling */
     padding: 1rem; /* optional: add padding for spacing */
   }
-  
-
   .navbar time {
     @apply hidden;
-  }
-
-  /* Make the finder content a centered grid */
+  } /* Make the finder content a centered grid */
   #finder .content {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -773,9 +651,7 @@ body {
     align-items: center;
     padding: 1rem; /* optional padding */
     position: static !important; /* remove absolute positioning from li */
-  }
-
-  /* Ensure each li is positioned normally inside the grid */
+  } /* Ensure each li is positioned normally inside the grid */
   #finder .content li {
     position: static !important;
     display: flex;
@@ -784,70 +660,48 @@ body {
     justify-content: center;
     width: auto !important;
     height: auto !important;
-  }
-
-  /* Images scale nicely inside grid */
+  } /* Images scale nicely inside grid */
   #finder .content li img {
     width: 60px; /* or any size that fits your mobile screen */
     height: 60px;
-  }
-
-  /* Text styling */
+  } /* Text styling */
   #finder .content li p {
     text-align: center;
     font-size: 0.875rem; /* optional: smaller for mobile */
     margin-top: 0.25rem;
   }
-
   .dock {
     display: none;
-  }
-
-  /* Hide all window sidebars */
+  } /* Hide all window sidebars */
   .sidebar {
     display: none !important;
-  }
-
-  /* Safari window header: hide all icons except WindowControls */
+  } /* Safari window header: hide all icons except WindowControls */
   #safari #window-header .icon {
     display: none !important;
-  }
-
-  /* Optional: make the search input full width if desired */
+  } /* Optional: make the search input full width if desired */
   #safari #window-header .search input {
     width: 100% !important;
-  }
-
-  /* Hide Safari blog images */
+  } /* Hide Safari blog images */
   .blog-post img {
     display: none !important;
   }
-
   #terminal .techstack {
     padding: 1rem !important; /* reduce padding if needed */
     overflow-x: auto; /* allow horizontal scrolling if content is wide */
-  }
-
-  /* Label row: stack vertically */
+  } /* Label row: stack vertically */
   #terminal .techstack .label {
     flex-direction: column !important;
     gap: 0.5rem;
-  }
-
-  /* Center the window header title */
+  } /* Center the window header title */
   #terminal #window-header h2 {
     text-align: center;
     padding-right: 35px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
-  }
-
-  /* Hide the Category / Technologies row on mobile */
+  } /* Hide the Category / Technologies row on mobile */
   #terminal .techstack .label {
     display: none;
-  }
-
-  /* Allow tech stack items to wrap nicely */
+  } /* Allow tech stack items to wrap nicely */
   #terminal .techstack .content li {
     display: flex;
     flex-direction: column; /* stack category row + items below */
@@ -855,14 +709,12 @@ body {
     gap: 0.25rem;
     padding-left: 0;
   }
-
   #terminal .techstack .content li .category-row {
     display: flex;
     align-items: center;
     gap: 0.5rem; /* spacing between check and category */
     width: 100%;
   }
-
   #terminal .techstack .content li h3 {
     margin-bottom: 0.25rem;
     margin: 0; /* remove default margin */
@@ -870,7 +722,6 @@ body {
     text-align: left;
     width: 100%; /* make it full width */
   }
-
   #terminal .techstack .content li ul {
     flex-wrap: wrap;
     display: flex;
@@ -878,57 +729,51 @@ body {
     padding-left: 0;
     padding-bottom: 8px;
   }
-
   #terminal .techstack p {
     text-align: left;
   }
-
   #terminal .techstack .content li ul li p {
     display: none;
   }
-
   #terminal .techstack .footnote p {
     flex-wrap: wrap;
   }
-
   #music #window-header h2 {
     text-align: center;
     padding-right: 60px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
   }
-
   #contact #window-header h2 {
     text-align: center;
     padding-right: 30px;
     flex: 1 1 100%; /* Take full width */
     margin: 0 auto; /* Center horizontally */
   }
-
   #txtfile h2 {
     padding-right: 30px;
-  }
-
-  /* Let main content expand */
+  } /* Let main content expand */
   .window-root .flex.w-full.flex-1 {
     flex-direction: column;
   }
-
+  /* RESUME MOBILE FIX */
+  @media (max-width: 768px) {
     #resume {
-    width: 95vw !important;
-    height: 80vh !important;
-    max-height: 700px;
-    top: 10vh !important;
-    left: 2.5vw !important;
-    border-radius: 0.75rem;
-  }
+      width: 95vw !important;
+      height: 80vh !important;
+      max-height: 700px;
+      top: 10vh !important;
+      left: 2.5vw !important;
+      border-radius: 0.75rem;
+    }
 
-  #resume .flex-1 {
-    overflow-y: auto;
-  }
+    #resume .flex-1 {
+      overflow-y: auto;
+    }
 
-  #resume .react-pdf__Page canvas {
-    max-width: 100% !important;
-    height: auto !important;
+    #resume .react-pdf__Page canvas {
+      max-width: 100% !important;
+      height: auto !important;
+    }
   }
 }
