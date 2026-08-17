@@ -178,17 +178,18 @@ const CaseStudy2 = () => {
       className="cs-animate relative z-50 flex min-w-0 min-h-0 h-full w-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#0c0d12]/95 text-white shadow-2xl"
     >
       <header className="window-drag-handle sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#0c0d12]/95 px-4 py-3 md:px-6">
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-            Case Study
-          </p>
-          <h1 className="text-lg font-semibold md:text-2xl">radi8 HOT YOGA</h1>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <WindowControls target="caseStudy2" />
-        </div>
-      </header>
+              <div className="flex items-center gap-2">
+                <WindowControls target="caseStudy2" />
+              </div>
+              <div className="text-right">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                  Case Study
+                </p>
+                <h1 className="text-lg font-semibold md:text-2xl">
+                  radi8 HOT YOGA
+                </h1>
+              </div>
+            </header>
 
       <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)]">
         <aside className="hidden lg:block min-w-0 border-b border-white/10 p-4 lg:border-b-0 lg:border-r lg:p-5">

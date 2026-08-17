@@ -64,29 +64,23 @@ const Vellum = () => {
     <div className="relative z-50 flex min-w-0 min-h-0 h-full w-full flex-col overflow-hidden rounded-[28px] border border-white/10 bg-[#0c0d12]/95 text-white shadow-2xl">
       {/* Window Header */}
       <header className="window-drag-handle sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#0c0d12]/95 px-4 py-3 md:px-6">
-        <div>
+        <div className="flex items-center gap-2">
+          <WindowControls target="vellum" />
+        </div>
+        <div className="text-right">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
             Project
           </p>
-
-          <h1 className="text-lg font-semibold md:text-2xl">
-            Vellum
-          </h1>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <WindowControls target="vellum" />
+          <h1 className="text-lg font-semibold md:text-2xl">Vellum</h1>
         </div>
       </header>
 
       {/* Window Body */}
       <div className="grid flex-1 min-w-0 min-h-0 grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)]">
-
         {/* =========================================================
             SIDEBAR
         ========================================================= */}
         <aside className="hidden min-w-0 border-b border-white/10 p-4 lg:block lg:border-b-0 lg:border-r lg:p-5">
-
           {/* Navigation */}
           <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-4">
             <p className="text-xs uppercase tracking-[0.3em] text-white/45">
@@ -106,9 +100,7 @@ const Vellum = () => {
                   }`}
                 >
                   <div className="flex min-w-0 items-center justify-between gap-3">
-                    <span className="truncate">
-                      {item.label}
-                    </span>
+                    <span className="truncate">{item.label}</span>
 
                     <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">
                       {String(index + 1).padStart(2, "0")}
@@ -159,7 +151,6 @@ const Vellum = () => {
           onScroll={handleScroll}
         >
           <div className="space-y-8 pb-32 w-full 2xl:max-w-7xl 2xl:mx-auto">
-
             {/* =====================================================
                 OVERVIEW
             ===================================================== */}
@@ -168,9 +159,7 @@ const Vellum = () => {
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-
                 <div className="space-y-5">
-
                   <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.25em] text-white/50">
                     <span className="rounded-full border border-white/10 px-3 py-1">
                       Design System
@@ -191,12 +180,11 @@ const Vellum = () => {
                     </h2>
 
                     <p className="mt-4 max-w-3xl text-sm leading-7 text-white/70 md:text-base">
-                      Vellum is a token-driven component system, not a folder
-                      of one-off styled components. Every color, radius,
-                      spacing, and type value is defined once in a single
-                      theme layer, and every component reads from that same
-                      source instead of hardcoding its own pixel values or
-                      hex codes.
+                      Vellum is a token-driven component system, not a folder of
+                      one-off styled components. Every color, radius, spacing,
+                      and type value is defined once in a single theme layer,
+                      and every component reads from that same source instead of
+                      hardcoding its own pixel values or hex codes.
                     </p>
                   </div>
 
@@ -216,7 +204,6 @@ const Vellum = () => {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-
                   <div className="rounded-3xl border border-white/10 bg-black/20 p-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-white/45">
                       Role
@@ -233,8 +220,8 @@ const Vellum = () => {
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/80">
-                      React, Next.js, Tailwind CSS, TypeScript, Radix UI,
-                      Design Tokens
+                      React, Next.js, Tailwind CSS, TypeScript, Radix UI, Design
+                      Tokens
                     </p>
                   </div>
 
@@ -260,7 +247,6 @@ const Vellum = () => {
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                     The Problem
@@ -273,7 +259,6 @@ const Vellum = () => {
                 </div>
 
                 <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
-
                   <p>
                     One of the problems Vellum addresses is the tendency for
                     component libraries to become collections of individually
@@ -288,7 +273,6 @@ const Vellum = () => {
                   </p>
 
                   <div className="grid gap-3 sm:grid-cols-2">
-
                     <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white/80">
                       Hardcoded design values
                     </div>
@@ -304,7 +288,6 @@ const Vellum = () => {
                     <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white/80">
                       Dark mode treated as an afterthought
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -322,7 +305,6 @@ const Vellum = () => {
               </p>
 
               <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-
                 {[
                   "Centralize design decisions through reusable tokens",
                   "Build components on accessible interaction primitives",
@@ -342,7 +324,6 @@ const Vellum = () => {
                     </p>
                   </div>
                 ))}
-
               </div>
             </section>
 
@@ -354,7 +335,6 @@ const Vellum = () => {
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                     Design System
@@ -366,7 +346,6 @@ const Vellum = () => {
                 </div>
 
                 <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
-
                   <p>
                     Every color, radius, spacing value, and typography decision
                     is defined once instead of being repeated throughout the
@@ -379,7 +358,6 @@ const Vellum = () => {
                   </p>
 
                   <div className="grid gap-3 sm:grid-cols-2">
-
                     <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white/80">
                       Color tokens
                     </div>
@@ -395,7 +373,6 @@ const Vellum = () => {
                     <div className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white/80">
                       Typography tokens
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -417,7 +394,6 @@ const Vellum = () => {
               </h3>
 
               <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-
                 {[
                   "Radix UI primitives",
                   "Keyboard and focus behavior",
@@ -437,20 +413,18 @@ const Vellum = () => {
                     </p>
                   </div>
                 ))}
-
               </div>
 
               <div className="mt-6 rounded-3xl border border-white/10 bg-black/20 p-5">
-
                 <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                   Real WCAG Contrast Failure
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-white/75 md:text-base">
                   The most important accessibility issue discovered during the
-                  project appeared in dark mode. A token was being used for
-                  both text color and solid-fill background, which silently
-                  reduced white-on-button contrast to 2.57:1.
+                  project appeared in dark mode. A token was being used for both
+                  text color and solid-fill background, which silently reduced
+                  white-on-button contrast to 2.57:1.
                 </p>
 
                 <p className="mt-4 text-sm leading-7 text-white/75 md:text-base">
@@ -459,7 +433,6 @@ const Vellum = () => {
                   corrected by separating solid-fill variants from
                   theme-adaptive text variants.
                 </p>
-
               </div>
             </section>
 
@@ -471,7 +444,6 @@ const Vellum = () => {
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                     Build
@@ -482,10 +454,9 @@ const Vellum = () => {
                   </h3>
 
                   <div className="mt-8">
-
                     <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
                       <img
-                        src="/images/vellum.png"
+                        src="/images/vellum-storybook.png"
                         alt="Vellum frontend implementation"
                         className="w-full h-auto rounded-2xl object-cover"
                       />
@@ -494,12 +465,10 @@ const Vellum = () => {
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
                       Vellum frontend implementation
                     </p>
-
                   </div>
                 </div>
 
                 <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
-
                   <p>
                     Vellum was built to demonstrate more than the ability to
                     create individual React components. The project focuses on
@@ -518,15 +487,13 @@ const Vellum = () => {
                   </p>
 
                   <div className="grid gap-4 lg:grid-cols-2">
-
                     <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-
                       <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                         Architecture
                       </p>
 
                       <pre className="mt-4 overflow-auto whitespace-pre-wrap break-words text-xs leading-6 text-white/75">
-{`Vellum
+                        {`Vellum
 ├─ @theme
 │  ├─ Colors
 │  ├─ Spacing
@@ -539,11 +506,9 @@ const Vellum = () => {
 │
 └─ Theme Variants`}
                       </pre>
-
                     </div>
 
                     <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-
                       <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                         Why this matters
                       </p>
@@ -553,17 +518,15 @@ const Vellum = () => {
                         is to make the underlying design decisions reusable as
                         well.
                       </p>
-
                     </div>
 
                     <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-
                       <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                         Token Architecture
                       </p>
 
                       <pre className="mt-4 overflow-auto whitespace-pre-wrap break-words text-xs leading-6 text-white/75">
-{`@theme {
+                        {`@theme {
   --color-...;
   --spacing-...;
   --radius-...;
@@ -575,17 +538,15 @@ const Vellum = () => {
                         Centralizing these decisions prevents individual
                         components from developing their own visual language.
                       </p>
-
                     </div>
 
                     <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-
                       <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                         Accessibility Architecture
                       </p>
 
                       <pre className="mt-4 overflow-auto whitespace-pre-wrap break-words text-xs leading-6 text-white/75">
-{`Component
+                        {`Component
    ↓
 Radix Primitive
    ↓
@@ -601,13 +562,10 @@ Visual Token Layer`}
                         rather than being recreated independently inside each
                         component.
                       </p>
-
                     </div>
-
                   </div>
 
                   <div className="flex flex-wrap gap-3 pt-2">
-
                     <a
                       href="https://vellum-dusky-xi.vercel.app/"
                       target="_blank"
@@ -616,7 +574,6 @@ Visual Token Layer`}
                     >
                       View Live Site
                     </a>
-
                   </div>
                 </div>
               </div>
@@ -630,7 +587,6 @@ Visual Token Layer`}
               className="scroll-mt-6 rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
                     Reflection
@@ -669,7 +625,6 @@ Visual Token Layer`}
                 </div>
 
                 <div className="space-y-4 text-sm leading-7 text-white/75 md:text-base">
-
                   <p>
                     Vellum demonstrates the kind of judgment a design-system
                     role actually needs: a token layer separated cleanly from
@@ -679,20 +634,18 @@ Visual Token Layer`}
                   </p>
 
                   <p>
-                    The most valuable part of the project was discovering that
-                    a real accessibility problem could not be solved correctly
-                    by simply changing a color in one component. The underlying
+                    The most valuable part of the project was discovering that a
+                    real accessibility problem could not be solved correctly by
+                    simply changing a color in one component. The underlying
                     token architecture had to change.
                   </p>
 
                   <p>
                     That distinction is the actual point of Vellum: the system
-                    should prevent inconsistency rather than simply document
-                    it.
+                    should prevent inconsistency rather than simply document it.
                   </p>
 
                   <div className="flex flex-wrap gap-3 pt-2">
-
                     <a
                       href="https://vellum-dusky-xi.vercel.app/"
                       target="_blank"
@@ -701,12 +654,10 @@ Visual Token Layer`}
                     >
                       View Live Site
                     </a>
-
                   </div>
                 </div>
               </div>
             </section>
-
           </div>
         </main>
       </div>
