@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { id: "Overview", label: "Overview" },
   { id: "Problem", label: "The Problem" },
   { id: "Goals", label: "Goals" },
-  { id: "Compare", label: "Light / Dark" },
+  { id: "Compare", label: "Before / After" },
   { id: "Process", label: "Process" },
   { id: "UI", label: "UI System" },
   { id: "Build", label: "Build" },
@@ -49,73 +49,75 @@ const CaseStudy2 = () => {
       overview: {
         title: "Overview",
         body: [
-          "JR Canvas is an interactive, system-driven canvas interface designed to explore how flexible layout tools can be built in the browser with real-time interaction and state-driven UI behavior.",
-          "This project is positioned as a product-level interface rather than a static design exercise. It focuses on how users create, manipulate, and organize visual elements in a dynamic environment.",
+          "radi8 HOT YOGA is a ground-up rebuild of a Phoenix hot yoga studio's website, keeping the original logo but rebuilding everything else around real information architecture, accessibility, and UI/UX best practices.",
+          "The rebuild is grounded in the studio's actual data — real class schedules, real Cold Plunge booking flow, real membership pricing, a real instructor roster — rather than generic yoga-site boilerplate and placeholder-forever copy.",
         ],
       },
 
       problem: {
         title: "The Problem",
         body: [
-          "Most canvas-style tools are either overly simplistic (limited interactions) or overly complex (steep learning curves and poor usability).",
-          "The challenge was to design a system that feels flexible like a design tool, but remains intuitive for non-technical users.",
-          "This required balancing interaction depth with cognitive load, while maintaining performance and predictable behavior across state changes.",
+          "The existing site, radi8love.com, buried its own booking flow behind a plain dropdown menu, shipped full-resolution images to every device regardless of screen size, and had no real information architecture — everything got flattened into unlabeled submenus.",
+          "The challenge was to redesign the experience from the ground up while keeping the brand recognizable, using the studio's real data instead of generic template content.",
+          "This meant treating the rebuild as a product problem, not a visual refresh: fixing navigation, booking, and performance issues while introducing a distinct visual identity built around the studio's actual product — heat.",
         ],
         bullets: [
-          "How do you manage complex UI state without overwhelming the user?",
-          "How do you design interactions that scale beyond simple drag-and-drop?",
-          "How do you maintain performance in a continuously updating UI system?",
-          "How do you make a powerful tool still feel intuitive on first use?",
+          "How do you surface a booking flow that was previously hidden behind a dropdown?",
+          "How do you give a niche booking type (Cold Plunge) its own flow without duplicating the calendar logic?",
+          "How do you replace oversized, unoptimized images without a full asset overhaul?",
+          "How do you turn a flat pile of submenus into a real, labeled navigation hierarchy?",
         ],
       },
 
       goals: {
         title: "Goals",
         bullets: [
-          "Design a flexible canvas system for dynamic layout creation",
-          "Support real-time interaction with multiple UI states",
-          "Build intuitive drag, select, and transform behaviors",
-          "Maintain predictable UX even under complex user actions",
+          "Replace the buried booking dropdown with a real schedule modal",
+          "Give Cold Plunge its own guided booking flow inside that same modal",
+          "Route every image through next/image for correctly-sized, compressed delivery",
+          "Flatten navigation into one clear, labeled list beside the logo",
+          "Use motion and a signature heat gauge to reinforce what the studio actually sells",
         ],
       },
 
       process: {
         title: "Process",
         body: [
-          "I began by breaking the problem into interaction primitives: selection, movement, transformation, and layering.",
-          "From there, I mapped how state changes propagate through the UI to ensure interactions remain predictable and reversible.",
-          "The focus shifted from visual design to behavioral design—defining how the system should respond to user intent rather than just how it should look.",
+          "I started by auditing the existing site against real information-architecture and WCAG principles: what was buried, what was oversized, and what had no clear label or hierarchy.",
+          "From there I rebuilt the content layer first — real class schedules, real membership pricing, a real instructor roster, and real studio policies — as typed data files, so the interface would always be driven by accurate information rather than placeholder copy.",
+          "Cold Plunge booking was designed as a mode switch inside the existing schedule modal rather than a separate flow, reusing the same calendar and CTA pattern instead of duplicating date-picking logic.",
+          "The visual identity — a dark 'desert night' palette with a molten-orange accent and a recurring heat gauge — was built last, once the structure and data were already solid.",
         ],
       },
 
       ui: {
         title: "UI System",
         bullets: [
-          "State-driven canvas architecture with clear interaction modes",
-          "Component-based structure for reusable interactive elements",
-          "Layering system for managing visual hierarchy and selection priority",
-          "Consistent interaction patterns across drag, select, and transform states",
+          "CSS-first design tokens via Tailwind v4's @theme — no separate JS config to keep in sync",
+          "Heat gauge as the signature intensity indicator, used in place of generic star ratings",
+          "Category-tabbed, swipeable pricing carousel for real membership and package data",
+          "Teacher carousel showing 30 instructors, 5 at a time on desktop, stepping down responsively",
         ],
       },
 
       build: {
         title: "Build",
         body: [
-          "This project is implemented as a real frontend system using React-based architecture and state-driven UI logic.",
-          "It demonstrates engineering alignment between interaction design and implementation, where every UX decision maps directly to a predictable state model.",
-          "Core systems include event handling layers for drag interactions, optimized re-rendering patterns, and performance-aware state updates for smooth real-time movement.",
-          "Rather than treating UI as static components, the system treats each element as an interactive entity with lifecycle, state transitions, and behavioral rules.",
+          "This project is implemented as a real Next.js 16 (App Router) and React 19 application, with Tailwind CSS v4, GSAP, and TypeScript throughout.",
+          "Every section of the site reads from a typed data file rather than having copy written inline in components, so a price change, a policy update, or a new teacher is a one-line edit instead of a component change.",
+          "A branded intro loader draws the studio's logo as a true lemniscate curve in molten orange on first visit each day, then reveals the site — skipped automatically on repeat visits and for users with reduced-motion preferences.",
+          "The build is launch-ready apart from two intentionally deferred pieces: the studio's actual logo file and real photography, both wired up and documented but shown as placeholders until they're dropped in.",
         ],
       },
 
       reflection: {
         title: "Reflection",
         body: [
-          "JR Canvas represents a shift from traditional UI design into system-level product thinking.",
-          "The most important learning was that interaction design is not visual—it is behavioral architecture.",
-          "Designing complex UI systems requires thinking in terms of state, transitions, and constraints rather than screens or layouts.",
-          "This project strengthens my ability to bridge UX design decisions with frontend engineering implementation, especially in interactive, state-heavy interfaces.",
-          "If extended further, the next step would be adding persistence, collaboration (multi-user state), and undo/redo architecture to evolve it into a full design tool.",
+          "radi8 HOT YOGA is a redesign exercise grounded in a real, existing business rather than a hypothetical brief.",
+          "The most important constraint was working from the old site's actual shortcomings — a hidden booking flow, oversized images, and flattened navigation — instead of redesigning in the abstract.",
+          "Splitting content from presentation, by driving every section from typed data files, made the difference between a one-off visual refresh and something a studio could actually maintain.",
+          "This project strengthens my ability to apply information architecture and accessibility principles to a real product surface, not just to a component library.",
+          "The next real steps are wiring the schedule and Cold Plunge flows to an actual booking backend, connecting the signup and donation forms to a submission endpoint, and swapping in real photography and testimonials.",
         ],
       },
     }),
@@ -180,7 +182,7 @@ const CaseStudy2 = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
             Case Study
           </p>
-          <h1 className="text-lg font-semibold md:text-2xl">JR Canvas</h1>
+          <h1 className="text-lg font-semibold md:text-2xl">radi8 HOT YOGA</h1>
         </div>
 
         <div className="flex items-center gap-2">
@@ -225,15 +227,15 @@ const CaseStudy2 = () => {
 
             <div className="mt-3 flex flex-col gap-2">
               <a
-                href="https://jr-canvas.vercel.app/"
+                href="https://radi8love.com/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
               >
-                View live site
+                View original site
               </a>
               <a
-                href="https://github.com/jeanrichardson610/Jr-Canvas"
+                href="https://github.com/jeanrichardson610/radi8-pitch--version"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 w-full rounded-2xl border border-white/10 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
@@ -261,33 +263,33 @@ const CaseStudy2 = () => {
                       Frontend Development
                     </span>
                     <span className="rounded-full border border-white/10 px-3 py-1">
-                      Interaction Design
+                      UI/UX Redesign
                     </span>
                     <span className="rounded-full border border-white/10 px-3 py-1">
-                      State Management
+                      Accessibility (WCAG)
                     </span>
                   </div>
 
                   <div>
                     <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
-                      Designing an Interactive Canvas Tool for Dynamic Layout
-                      Creation
+                      Rebuilding a Phoenix Hot Yoga Studio's Site Around Real
+                      Information Architecture
                     </h2>
                     <p className="mt-4 max-w-3xl text-sm leading-6 text-white/70 md:text-base">
-                      JR Canvas is a React-based interactive canvas system that demonstrates how complex UI behavior can be architected and implemented in a real frontend environment. The project focuses on the engineering behind interaction design decisions, showcasing how state-driven architecture enables flexible, intuitive user interactions in a dynamic layout tool while keeping it responsive for multiple screen sizes.
+                      radi8 HOT YOGA is a Next.js redesign of an existing Phoenix hot yoga studio's website, keeping the studio's logo but rebuilding the schedule, booking, navigation, and visual identity from the ground up around information architecture, WCAG, and UI/UX best practices — using the studio's real data instead of generic yoga-site boilerplate.
                     </p>
                   </div>
                   <div className="mt-8">
                     <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.01] mb-8">
                       <img
-                        src="/images/jr_canvas_demo.gif"
-                        alt="JR Canvas demo"
+                        src="/images/radi8_demo.gif"
+                        alt="radi8 HOT YOGA demo"
                         className="w-full h-auto rounded-2xl object-cover"
                       />
                     </div>
 
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      Demo of the JR Canvas experience.
+                      Demo of the redesigned radi8 HOT YOGA experience.
                     </p>
                   </div>
                 </div>
@@ -306,8 +308,8 @@ const CaseStudy2 = () => {
                       Tools
                     </p>
                     <p className="mt-2 text-sm text-white/80">
-                      React, TypeScript, Tailwind CSS, UX Design Principles, UX
-                      Research, UI Systems, Zustand
+                      Next.js 16, React 19, TypeScript, Tailwind CSS v4, GSAP,
+                      lucide-react
                     </p>
                   </div>
                   <div className="rounded-3xl border border-white/10 bg-black/20 p-4 sm:col-span-2 lg:col-span-1">
@@ -315,10 +317,10 @@ const CaseStudy2 = () => {
                       Core idea
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/80">
-                      Show the engineering behind interaction design decisions
-                      by building a real frontend system that demonstrates how
-                      complex UI behavior is architected and implemented, not
-                      just how it looks.
+                      Keep the studio recognizable, but rebuild the experience
+                      around real class schedules, real pricing, and real
+                      studio policies — so every design decision is grounded
+                      in the actual product, not a template.
                     </p>
                   </div>
                 </div>
@@ -335,8 +337,8 @@ const CaseStudy2 = () => {
                     The Problem
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    Flexibility versus Usability: Designing a Canvas System that
-                    Scales in Interaction Depth without Overwhelming Users
+                    A Buried Booking Flow and Flattened Navigation on an
+                    Otherwise Loyal Studio's Site
                   </h3>
                 </div>
 
@@ -389,10 +391,11 @@ const CaseStudy2 = () => {
               <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                    Light / Dark
+                    Before / After
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    Use the slider to compare the modes.
+                    Use the slider to compare the original site and the
+                    redesign.
                   </h3>
                 </div>
                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/20 p-1 text-xs uppercase tracking-[0.25em] text-white/65">
@@ -417,8 +420,8 @@ const CaseStudy2 = () => {
                 <div className="mt-6 space-y-4">
                   <div className="relative aspect-16/10 overflow-hidden rounded-[28px] border border-white/10 bg-black/30">
                     <img
-                      src="/images/grid_dark.jpg"
-                      alt="Dark mode preview"
+                      src="/images/radi8_before.jpg"
+                      alt="Original radi8love.com site"
                       className="absolute inset-0 h-full w-full object-cover object-top"
                     />
 
@@ -429,12 +432,12 @@ const CaseStudy2 = () => {
                       }}
                     >
                       <img
-                        src="/images/grid_light.jpg"
-                        alt="Light mode preview"
+                        src="/images/radi8_after.jpg"
+                        alt="Redesigned radi8 HOT YOGA site"
                         className="absolute inset-0 h-full w-full object-cover object-top "
                       />
                       <div className="absolute left-4 top-4 rounded-full bg-black/90 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white">
-                        Light
+                        Redesign
                       </div>
                     </div>
 
@@ -444,7 +447,7 @@ const CaseStudy2 = () => {
                     />
 
                     <div className="absolute right-4 top-4 rounded-full bg-black/90 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white z-0">
-                      Dark
+                      Original
                     </div>
                   </div>
 
@@ -467,34 +470,20 @@ const CaseStudy2 = () => {
                 <div className="mt-6 grid gap-4 lg:grid-cols-2">
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5 lg:col-span-2">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      State Architecture
+                      Design Tokens as CSS-First Theme
                     </p>
                     <p className="mt-3 text-sm text-white/70">
-                      Objects are stored in a normalized structure, enabling
-                      scalable updates, layering, and multi-object interactions.
+                      Every custom color and font resolves from one Tailwind
+                      v4 @theme block in globals.css, instead of a separate JS
+                      config file to keep in sync.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`const useStore = create((set, get) => ({
-  pages: [],
-  currentPageId: '',
-  selectedIds: [],
-
-  updateObject: (id, updates) => {
-    set((s) => ({
-      pages: s.pages.map((p) =>
-        p.id === s.currentPageId
-          ? {
-              ...p,
-              objects: {
-                ...p.objects,
-                [id]: { ...p.objects[id], ...updates },
-              },
-            }
-          : p
-      ),
-    }));
-  },
-}));`}
+                      {`@theme {
+  --color-dusk-950: #150e0a;   /* base background — adobe night */
+  --color-molten-500: #ff5a1f; /* primary brand accent — flame */
+  --color-gold-400: #e8b34c;   /* golden-hour highlight — CTAs, heat gauge */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}`}
                     </pre>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5 lg:col-span-2">
@@ -502,145 +491,62 @@ const CaseStudy2 = () => {
                       Why this matters
                     </p>
                     <p className="mt-4 text-sm leading-6 text-white/75">
-                      JR Canvas is built as a state-driven interaction system
-                      where every user action—dragging, selecting, drawing,
-                      grouping—is mapped to predictable state transitions. The
-                      goal is not just rendering UI, but designing how the
-                      system behaves under complex user input.
+                      Every section on the site reads from a typed data file
+                      in lib/ rather than having copy written inline in
+                      components. The studio's prices, policies, and staff
+                      will change far more often than the layout will — so a
+                      price update or a new teacher is a one-line edit, never
+                      a component change.
                     </p>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Group-Aware Transformation System
+                      GSAP Scoped &amp; Auto-Cleaned
                     </p>
                     <p className="mt-3 text-sm text-white/70">
-                      Objects inherit group behavior, allowing multiple elements
-                      to move as a single unit while respecting constraints like
-                      locking.
+                      A shared hook wraps gsap.context() so every component
+                      that animates cleans itself up the same way, avoiding
+                      leaked tweens across route changes in the App Router.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`onDragMove={(dx, dy) => {
-  const store = useStore.getState();
-  const page = store.getCurrentPage();
+                      {`export function useGsapContext<T extends HTMLElement>(
+  setup: (ctx: { container: T }) => void,
+  deps: React.DependencyList = []
+): RefObject<T | null> {
+  const scope = useRef<T>(null);
 
-  const obj = page.objects[id];
-  if (!obj || obj.locked) return;
+  useLayoutEffect(() => {
+    if (!scope.current) return;
+    const ctx = gsap.context(() => {
+      setup({ container: scope.current as T });
+    }, scope);
 
-  const deltaX = dx / zoomRef.current;
-  const deltaY = dy / zoomRef.current;
+    return () => ctx.revert();
+  }, deps);
 
-  // if object is part of a group, move ALL siblings
-  if (obj.parentId) {
-    const groupId = obj.parentId;
-    const group = page.objects[groupId];
-    if (!group || group.type !== 'group') return;
-
-    (group.children as string[]).forEach((childId) => {
-      const child = page.objects[childId];
-      if (!child || child.locked) return;
-
-      store.updateObject(childId, {
-        x: child.x + deltaX,
-        y: child.y + deltaY,
-      });
-    });
-
-    return;
-  }
-
-  // normal single object move
-  store.updateObject(id, {
-    x: obj.x + deltaX,
-    y: obj.y + deltaY,
-  });
-}}`}
-                    </pre>
-                  </div>
-                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Zoom-Consistent Coordiante Mapping
-                    </p>
-                    <p className="mt-3 text-sm text-white/70">
-                      Converts screen input into canvas space, ensuring precise
-                      interaction regardless of zoom or pan state.
-                    </p>
-                    <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`const getCanvasPos = useCallback((clientX: number, clientY: number) => {
-  const rect = canvasRef.current!.getBoundingClientRect();
-  return screenToCanvas(
-    clientX - rect.left,
-    clientY - rect.top,
-    panXRef.current,
-    panYRef.current,
-    zoomRef.current
-  );
-}, []);`}
-                    </pre>
-                  </div>
-                  <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      State-Driven Interaction Engine
-                    </p>
-                    <p className="mt-3 text-sm text-white/70">
-                      Tool behavior dynamically changes based on state and user
-                      input, enabling complex interactions like constrained
-                      drawing and multi-mode input.
-                    </p>
-                    <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`if (activeToolRef.current === 'pencil' && isDrawingRef.current) {
-  penPointsRef.current = [...penPointsRef.current, pos];
-  setPenPointsState([...penPointsRef.current]);
-  return;
-}
-
-if (isDrawingRef.current) {
-  drawCurrentRef.current = pos;
-
-  let x2 = pos.x;
-  let y2 = pos.y;
-
-  if (e.shiftKey && ['rectangle', 'circle', 'frame'].includes(activeToolRef.current)) {
-    const dx = pos.x - drawStartRef.current.x;
-    const dy = pos.y - drawStartRef.current.y;
-    const size = Math.max(Math.abs(dx), Math.abs(dy));
-
-    x2 = drawStartRef.current.x + Math.sign(dx) * size;
-    y2 = drawStartRef.current.y + Math.sign(dy) * size;
-  }
-
-  setDrawPreviewState({
-    x1: drawStartRef.current.x,
-    y1: drawStartRef.current.y,
-    x2,
-    y2,
-  });
+  return scope;
 }`}
                     </pre>
                   </div>
                   <div className="min-w-0 rounded-[28px] border border-white/10 bg-black/20 p-5">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                      Zoom Handling Precision
+                      One Modal, Two Booking Modes
                     </p>
                     <p className="mt-3 text-sm text-white/70">
-                      Zoom handling that calculates new pan offsets to ensure
-                      the zoom focuses on the mouse position, demonstrating
-                      attention to interaction detail and user experience in
-                      dynamic viewport transformations.
+                      Cold Plunge is a mode switch on the schedule modal
+                      rather than a separate flow — entering it forces the
+                      Desert Ridge location and swaps the calendar for a
+                      staff picker.
                     </p>
                     <pre className="mt-4 overflow-auto text-xs leading-6 text-white/75 whitespace-pre-wrap wrap-break-word">
-                      {`const handleWheel = (e: WheelEvent) => {
-  if (e.ctrlKey || e.metaKey) {
-    const factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+                      {`const enterColdPlunge = () => {
+  setMode("cold-plunge");
+  setLocation(COLD_PLUNGE_LOCATION);
+  setSelectedStaff(null);
+  setSelectedTime(null);
+};
 
-    const newZoom = Math.min(Math.max(zoom * factor, 0.02), 256);
-
-    const newPanX = mouseX - (mouseX - panX) * (newZoom / zoom);
-    const newPanY = mouseY - (mouseY - panY) * (newZoom / zoom);
-
-    setZoom(newZoom);
-    setPan(newPanX, newPanY);
-  }
-};`}
+const canBookColdPlunge = Boolean(selectedStaff && selectedTime);`}
                     </pre>
                   </div>
                 </div>
@@ -657,8 +563,8 @@ if (isDrawingRef.current) {
                     Process
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    From Interaction Primitives to System Architecture:
-                    Designing a State-Driven Canvas Experience
+                    From Auditing the Original Site to a Data-Driven
+                    Rebuild
                   </h3>
                 </div>
                 <div className="space-y-4 text-sm leading-6 text-white/75 md:text-base">
@@ -698,14 +604,14 @@ if (isDrawingRef.current) {
                     Build
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    Design and engineering in one experience.
+                    A real product rebuild, not a template swap.
                   </h3>
                   <div className="mt-8">
                     <div className="flex gap-4">
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
                         <img
-                          src="/images/jr_canvas_logo.png"
-                          alt="JR Canvas logo"
+                          src="/images/radi8_logo.png"
+                          alt="radi8 HOT YOGA logo"
                           className="w-full h-auto rounded-2xl object-cover"
                         />
                         <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
@@ -714,8 +620,8 @@ if (isDrawingRef.current) {
                       </div>
                     </div>
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      Grid logo and simple UI elements were built as reusable
-                      React components
+                      The original studio logo, kept intact, set against the
+                      new desert-night palette.
                     </p>
                   </div>
                 </div>
@@ -725,15 +631,15 @@ if (isDrawingRef.current) {
                   ))}
                   <div className="flex flex-wrap gap-3 pt-2">
                     <a
-                      href="https://jr-canvas.vercel.app/"
+                      href="https://radi8love.com/"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:scale-[1.05]"
                     >
-                      View Live Site
+                      View Original Site
                     </a>
                     <a
-                      href="https://github.com/jeanrichardson610/JR-Canvas"
+                      href="https://github.com/jeanrichardson610/radi8-pitch--version"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10"
@@ -755,34 +661,35 @@ if (isDrawingRef.current) {
                     Reflection
                   </p>
                   <h3 className="mt-2 text-2xl font-semibold md:text-3xl">
-                    A real world tool with genuine product value, not just a
-                    design exercise.
+                    Redesigning against a real, existing business — not a
+                    hypothetical brief.
                   </h3>
                   <div className="mt-8">
                     <div className="flex gap-4">
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
                         <img
-                          src="/images/grid_mobile_light.jpg"
-                          alt="JR Canvas Mobile View Light Mode"
+                          src="/images/radi8_mobile_schedule.jpg"
+                          alt="radi8 HOT YOGA Mobile Schedule Modal"
                           className="w-full h-auto rounded-2xl object-cover"
                         />
                         <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
-                          Light
+                          Schedule
                         </p>
                       </div>
                       <div className="rounded-3xl border border-white/10 bg-white/5 p-2 md:p-3 shadow-2xl overflow-hidden object-cover transition-transform duration-500 hover:scale-[1.05] mb-8">
                         <img
-                          src="/images/grid_mobile_dark.jpg"
-                          alt="JR Canvas Mobile View Dark Mode"
+                          src="/images/radi8_mobile_pricing.jpg"
+                          alt="radi8 HOT YOGA Mobile Pricing Carousel"
                           className="w-full h-auto rounded-2xl object-cover"
                         />
                         <p className="mt-2 text-center text-xs uppercase tracking-[0.25em] text-white/40">
-                          Dark
+                          Pricing
                         </p>
                       </div>
                     </div>
                     <p className="mt-3 text-xs uppercase tracking-[0.25em] text-white/40">
-                      Responsive Mobile View: Light and Dark Mode
+                      Responsive Mobile View: Schedule Modal and Pricing
+                      Carousel
                     </p>
                   </div>
                 </div>

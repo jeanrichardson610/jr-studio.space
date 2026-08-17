@@ -67,7 +67,7 @@ const Dock = () => {
           y: 0,
           duration: 0.3,
           ease: "power1.out",
-        })
+        }),
       );
 
     dock.addEventListener("mousemove", handleMouseMove);
@@ -91,6 +91,12 @@ const Dock = () => {
     if (app.id === "finder") {
       openWindow("finder");
       setActiveLocation(locations.work);
+      return;
+    }
+
+    if (app.id === "vellum") {
+      openWindow("vellum");
+      setActiveLocation(locations.vellum);
       return;
     }
 
@@ -120,7 +126,7 @@ const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {filteredDockApps.map(({ id, name, icon, canOpen, action }) => (
+        {filteredDockApps.map(({ id, name, icon, canOpen, action, link }) => (
           <div key={id} className="relative flex justify-center">
             <button
               type="button"

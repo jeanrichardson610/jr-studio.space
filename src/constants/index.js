@@ -53,13 +53,6 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "safari",
-    name: "Articles", // was "Safari"
-    icon: "safari.png",
-    canOpen: true,
-    hideOnSmall: true,
-  },
-  {
     id: "photos",
     name: "Gallery", // was "Photos"
     icon: "photos.png",
@@ -85,6 +78,14 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "vellum",
+    name: "Vellum", // Storybook project
+    icon: "storybook.svg",
+    canOpen: true,
+    
+    
+  },
+  {
     id: "caseStudy",
     name: "KIK: UI/UX Case Study", // UI/UX case study project
     icon: "kik.png",
@@ -92,8 +93,8 @@ const dockApps = [
   },
   {
     id: "caseStudy2",
-    name: "JR Canvas: UI/UX Case Study", // UI/UX case study project
-    icon: "jr_canvas_logo.png",
+    name: "Radi8: UI/UX Case Study", // UI/UX case study project
+    icon: "radi8_logo.png",
     canOpen: true,
   },
   {
@@ -342,69 +343,61 @@ const WORK_LOCATION = {
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
-    // ▶ Project 1 JR Canvas
+    // ▶ Project 1 Kanban Flow
     {
       id: 5,
-      name: "JR Canvas",
+      name: "Kanban Flow",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-5",
-      windowPosition: "top-[15vh] right-20",
+      windowPosition: "top-[15vh] right-18",
       children: [
         {
           id: 1,
-          name: "JR Canvas.txt",
+          name: "Kanban Flow.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "JR Canvas is a Figma-style design editor built with React + Vite + TypeScript featuring an infinite canvas, drawing tools, layers, assets, prototype connections, and full responsive interaction support for desktop, tablet, and mobile devices.",
-            "This project focuses on building a real canvas engine, not just UI — including pointer-based interactions, transform logic, state management, and dynamic rendering inside the canvas.. Users can browse courses, view details, and navigate through a clean, responsive interface.",
+            "Kanban Flow is a Trello-style project board built with Next.js + TypeScript + Tailwind CSS featuring drag-and-drop columns and cards, patch-based undo/redo, a command palette, cross-tab sync, and full keyboard-accessible interaction support for desktop, tablet, and mobile devices.",
+            "This project focuses on complex client-side state management, not just UI — including Immer-based undo/redo history, live drag-and-drop reconciled against that history without race conditions, and optimistic local persistence with automatic rollback on failure.",
           ],
         },
         {
           id: 2,
-          name: "JR Canvas.com",
+          name: "Kanban Flow.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://jr-canvas.vercel.app/",
+          href: "https://kanban-flow-rho.vercel.app/",
           position: "top-50 left-20",
         },
         {
           id: 4,
-          name: "JR Canvas.png",
+          name: "Kanban Flow.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-15 right-30",
-          imageUrl: "/images/JRcanvas.png",
+          imageUrl: "/images/KanbanFlow.png",
         },
         {
           id: 5,
-          name: "JR Canvas.github",
+          name: "Kanban Flow.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/JR-Canvas",
+          href: "https://github.com/jeanrichardson610/kanban-flow",
           position: "top-60 right-20",
-        },
-        {
-          id: 6,
-          name: "JR Canvas Case Study.app",
-          icon: "/images/jr_canvas_logo.png", 
-          kind: "app",
-          action: "openCaseStudy2",
-          position: "top-30 left-40",
         },
       ],
     },
 
-    // ▶ Project 2 zero_trace
+    // ▶ Project 2 mini-react
     {
       id: 6,
-      name: "zero_trace",
+      name: "mini-react",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-0", // icon position inside Finder
@@ -412,102 +405,102 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "zero_trace Project.txt",
+          name: "mini-react Project.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "zero_trace is a private, ephemeral chat platform designed for instant, self-destructing conversations.",
-            "Users can join anonymously, share text, images, and GIFs in real-time, and communicate in secure rooms that automatically expire or can be manually destroyed.",
-            "Built for privacy and simplicity, zero_trace combines Next.js, Elysia, Redis, and Vercel Blob storage to deliver a fast, serverless, real-time messaging experience without leaving a trace.",
+            "Mini-react is a lightweight React implementation designed for learning and experimentation.",
+            "This project is a tiny virtual DOM diffing engine, a fiber-style interruptible work loop, and a useState/useEffect implementation, built entirely from scratch in about 350 lines. Check package.json — there's exactly one dependency, and it's Vite. No react, no react-dom, no hidden import doing the real work underneath.",
+            "The goal of mini-react is to provide a clear, minimal example of how React works under the hood, making it easier to understand the core concepts and mechanics of React's rendering process.",
           ],
         },
         {
           id: 2,
-          name: "zero_trace.com",
+          name: "mini-react.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://zero-trace-six.vercel.app/",
+          href: "https://mini-react-mu.vercel.app/",
           position: "top-10 right-45",
         },
         {
           id: 4,
-          name: "zero_trace.png",
+          name: "mini-react.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/zero_trace.png",
+          imageUrl: "/images/mini-react.png",
         },
         {
           id: 5,
-          name: "zero_trace.github",
+          name: "mini-react.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/zero_trace",
+          href: "https://github.com/jeanrichardson610/mini-react",
           position: "top-65 right-30",
         },
       ],
     },
 
-    // ▶ Project 3 Spatia
+    // ▶ Project 3 In Orbit Solar System
     {
       id: 7,
-      name: "Spatia",
+      name: "In Orbit Solar System",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-50",
-      windowPosition: "top-[40vh] right-20",
+      windowPosition: "top-[40vh] right-12",
       children: [
         {
           id: 1,
-          name: "Spatia.txt",
+          name: "In Orbit Solar System.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-25 left-30",
           description: [
-            "AI-powered architectural visualization SaaS built with React, TypeScript, and Puter. Use AI models from Claude to Gemini to transform 2D floor plans into photorealistic 3D renders with permanent hosting and persistent metadata. This project features 2D-to-3D photorealistic AI-rendering, serverless workers, high-performance KV storage, and a global community feed.",
-            "Dynamic Project Gallery: A personalized workspace that tracks your history of visualizations with instant loading and metadata persistence.",
+            "In Orbit is a single-page, client-only 3D solar system — the Sun and eight planets, each running its own hand-written GLSL shader or real texture map. Click any body to dolly the camera in with an eased cinematic transition and read a panel of real facts about it; click again to fly back out.",
+            "The project demonstrates graphics and interaction judgment specifically: a procedural, animated Sun shader; a physically-driven day/night terminator on Earth computed from the actual sun-angle each frame; a satellite (the Moon) correctly nested in its parent's orbital hierarchy; a camera controller built from scratch on THREE.Spherical; and — the centerpiece — an actual Kepler-equation solver that can place every body at its real position for any date, not just a decorative constant-speed loop.",
           ],
         },
         {
           id: 2,
-          name: "Spatia.com",
+          name: "In Orbit Solar System.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://puter.com/app/spatia",
+          href: "https://in-orbit-solar-system.vercel.app/",
           position: "top-10 right-20",
         },
         {
           id: 4,
-          name: "Spatia.png",
+          name: "In Orbit Solar System.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-67 right-85",
-          imageUrl: "/images/Spatia.png",
+          imageUrl: "/images/in-orbit-solar-system.png",
         },
         {
           id: 5,
-          name: "Spatia.github",
+          name: "In Orbit Solar System.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/Spatia",
+          href: "https://github.com/jeanrichardson610/in-orbit-solar-system",
           position: "top-60 right-20",
         },
       ],
     },
 
-    // ▶ Project 4 SignalStack
+    // ▶ Project 4 Radi8 Redesign
     {
       id: 8,
-      name: "SignalStack",
+      name: "Radi8 Redesign",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-80 right-55",
@@ -515,43 +508,50 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "SignalStack.txt",
+          name: "Radi8 Redesign.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 right-10",
           description: [
-            "SignalStack is a high-performance cryptocurrency tracking dashboard built with React, powered by the CoinGecko API, and optimized using TanStack React Query.",
-
-            "SignalStack focuses on real-world frontend engineering: caching strategies, performance optimization, live data handling, and smooth UX interactions. It features real-time price updates, historical data visualization, and a clean, responsive design that delivers a seamless user experience for crypto enthusiasts.",
+            "Radi8 Redesign is a comprehensive overhaul of a Phoenix hot yoga studio's website, focusing on improving the booking flow and navigation while maintaining the studio's unique identity.",
+            "Radi8 Redesign focuses on creating a seamless user experience, enhancing the booking process, and ensuring that the website reflects the studio's brand identity. The redesign incorporates modern design principles, intuitive navigation, and responsive layouts to provide an optimal experience across devices.",
           ],
         },
         {
           id: 2,
-          name: "SignalStack.com",
+          name: "Radi8 Redesign.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://signal-stack-wheat.vercel.app/",
-          position: "top-20 left-20",
+          href: "https://radi8-pitch-version.vercel.app/",
+          position: "top-20 left-10",
         },
         {
           id: 4,
-          name: "SignalStack.png",
+          name: "Radi8 Redesign.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 left-80",
-          imageUrl: "/images/SignalStack.png",
+          imageUrl: "/images/Radi8Redesign.png",
         },
         {
           id: 5,
-          name: "SignalStack.github",
+          name: "Radi8Redesign.github",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
-          href: "https://github.com/jeanrichardson610/SignalStack",
-          position: "top-60 right-70",
+          href: "https://github.com/jeanrichardson610/radi8-pitch--version",
+          position: "top-70 right-70",
+        },
+        {
+          id: 6,
+          name: "Radi8 Redesign Case Study.app",
+          icon: "/images/radi8_logo.png",
+          kind: "app",
+          action: "openCaseStudy2",
+          position: "top-30 left-50",
         },
       ],
     },
@@ -607,7 +607,7 @@ const WORK_LOCATION = {
         {
           id: 6,
           name: "Keep It Katelin Case Study.app",
-          icon: "/images/kik.png", 
+          icon: "/images/kik.png",
           kind: "app",
           action: "openCaseStudy",
           position: "top-30 left-40",
@@ -791,6 +791,13 @@ const WINDOW_CONFIG = {
     data: null,
   },
   music: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  vellum: {
     isOpen: false,
     isMinimized: false,
     isMaximized: false,
